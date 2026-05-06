@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process | Guardian BPO</title>
+
+    <!-- Fonts: Inter for an Enterprise look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        guardian: {
+                            primary: '#2563eb', // Blue 600
+                            secondary: '#1e40af', // Blue 800
+                            dark: '#0f172a', // Slate 900
+                            accent: '#38bdf8', // Light Blue
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Enterprise Background Pattern */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Smooth Entrance Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Node Hover Effects */
+        .process-node {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .group:hover .process-node {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.15), 0 8px 10px -6px rgba(37, 99, 235, 0.1);
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 antialiased selection:bg-guardian-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation (Enterprise Minimalist) -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+
+            <!-- Left: Home Icon & Logo -->
+            <div class="flex items-center gap-3 md:gap-5">
+                <a href="index.html"
+                    class="p-2 text-slate-500 hover:text-guardian-primary hover:bg-blue-50 rounded-lg transition-all group"
+                    aria-label="Go to Home">
+                    <i data-lucide="home" class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
+
+                <div class="w-px h-6 bg-slate-200 hidden sm:block"></div>
+
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div
+                        class="w-8 h-8 bg-guardian-primary rounded-lg flex items-center justify-center group-hover:bg-guardian-secondary transition-colors">
+                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-xl text-guardian-dark tracking-tight">Guardian<span
+                            class="text-guardian-primary">BPO</span></span>
+                </a>
+            </div>
+
+            <!-- Middle: Nav Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#" class="hover:text-guardian-primary transition-colors">Solutions</a>
+                <a href="process.html" class="text-guardian-primary font-semibold">How We Work</a>
+                <a href="about.html" class="hover:text-guardian-primary transition-colors">About Us</a>
+                <a href="faq.html" class="hover:text-guardian-primary transition-colors">FAQ</a>
+            </div>
+
+            <!-- Right: CTA -->
+            <a href="#contact"
+                class="bg-guardian-dark text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20">
+                Partner With Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Process Section -->
+    <main class="flex-grow">
+        <section id="process" class="py-20 md:py-32 bg-white relative overflow-hidden">
+            <!-- Architectural Background -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-50 z-0"></div>
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white via-transparent to-white z-0">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Header -->
+                <div class="text-center mb-20 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-guardian-primary font-bold tracking-widest uppercase mb-4 text-xs border border-blue-100">
+                        <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                        How We Work
+                    </div>
+                    <h1 class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-dark mb-6 tracking-tight">
+                        Our Operational Deployment
+                    </h1>
+                    <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                        A systematic, four-phase enterprise architecture designed to seamlessly integrate our talent
+                        with your corporate objectives.
+                    </p>
+                </div>
+
+                <!-- Process Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative max-w-6xl mx-auto"
+                    id="process-grid">
+
+                    <!-- Desktop Connecting Lines -->
+                    <div
+                        class="hidden lg:block absolute top-[2.25rem] left-[12.5%] right-[12.5%] h-0.5 bg-slate-100 -translate-y-1/2 z-0 rounded-full">
+                    </div>
+                    <!-- Animated Fill Line -->
+                    <div id="progress-line"
+                        class="hidden lg:block absolute top-[2.25rem] left-[12.5%] h-0.5 bg-gradient-to-r from-guardian-primary to-guardian-accent -translate-y-1/2 z-0 rounded-full w-0 transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(37,99,235,0.5)]">
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
+                        style="transition-delay: 0.1s">
+                        <div
+                            class="process-node w-[4.5rem] h-[4.5rem] bg-white border-4 border-slate-100 shadow-lg rounded-full flex items-center justify-center text-guardian-primary font-black text-2xl mb-8 relative z-10 group-hover:bg-blue-50 transition-colors">
+                            1
+                        </div>
+                        <div
+                            class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-transparent group-hover:border-slate-100 transition-colors">
+                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Discovery Phase</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">We analyze your business architecture,
+                                define core KPIs, and identify operational bottlenecks to construct a tailored
+                                blueprint.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
+                        style="transition-delay: 0.3s">
+                        <div
+                            class="process-node w-[4.5rem] h-[4.5rem] bg-white border-4 border-slate-100 shadow-lg rounded-full flex items-center justify-center text-guardian-primary font-black text-2xl mb-8 relative z-10 group-hover:bg-blue-50 transition-colors">
+                            2
+                        </div>
+                        <div
+                            class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-transparent group-hover:border-slate-100 transition-colors">
+                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Talent Sourcing</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Our HR specialists execute targeted
+                                recruitment, handpicking agents who match both your required technical skills and
+                                corporate culture.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
+                        style="transition-delay: 0.5s">
+                        <div
+                            class="process-node w-[4.5rem] h-[4.5rem] bg-white border-4 border-slate-100 shadow-lg rounded-full flex items-center justify-center text-guardian-primary font-black text-2xl mb-8 relative z-10 group-hover:bg-blue-50 transition-colors">
+                            3
+                        </div>
+                        <div
+                            class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-transparent group-hover:border-slate-100 transition-colors">
+                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Protocol Training</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Rigorous immersion in your brand voice,
+                                product knowledge, and security protocols ensuring agents are fully compliant before
+                                deployment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 (Highlight) -->
+                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
+                        style="transition-delay: 0.7s">
+                        <!-- Pulse effect for the final step -->
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 w-[4.5rem] h-[4.5rem] bg-guardian-primary/30 rounded-full animate-ping group-hover:hidden">
+                        </div>
+                        <div
+                            class="process-node w-[4.5rem] h-[4.5rem] bg-guardian-dark border-4 border-slate-800 shadow-xl shadow-guardian-dark/20 rounded-full flex items-center justify-center text-white mb-8 relative z-10 group-hover:bg-guardian-primary transition-colors">
+                            <i data-lucide="rocket" class="w-6 h-6"></i>
+                        </div>
+                        <div
+                            class="bg-slate-50 p-6 rounded-2xl border border-slate-200 group-hover:border-guardian-primary/30 transition-colors shadow-sm">
+                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Go Live & Scale</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Seamlessly launch operations with
+                                continuous Quality Assurance monitoring and elastic scalability options to handle future
+                                volume.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-guardian-primary w-5 h-5"></i>
+                <span class="font-bold text-guardian-dark">GuardianBPO</span>
+            </div>
+            <p class="text-slate-500 text-sm">&copy; 2026 Guardian BPO Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 2. Scroll Reveal & Progress Line Animation Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const progressLine = document.getElementById('progress-line');
+            const processGrid = document.getElementById('process-grid');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+
+                // Animate elements fading up
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+
+                // Animate the connecting line filling up
+                if (processGrid && progressLine) {
+                    const gridTop = processGrid.getBoundingClientRect().top;
+                    // When the grid is well within view
+                    if (gridTop < windowHeight - 200) {
+                        progressLine.style.width = '75%'; // Covers distance from step 1 to step 4
+                    }
+                }
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            // Trigger once on load in case elements are already in view
+            revealOnScroll();
+        });
+    </script>
+</body>
+
+</html>

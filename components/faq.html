@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Guardian BPO</title>
+
+    <!-- Fonts: Inter for an Enterprise look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        guardian: {
+                            primary: '#2563eb', // Blue 600
+                            secondary: '#1e40af', // Blue 800
+                            dark: '#0f172a', // Slate 900
+                            accent: '#38bdf8', // Light Blue
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Smooth Entrance Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* FAQ Accordion Transitions */
+        .faq-answer-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-item.active .faq-answer-wrapper {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            transform: translateY(-10px);
+        }
+
+        .faq-item.active .faq-answer-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 antialiased selection:bg-guardian-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation (Enterprise Minimalist) -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+
+            <!-- Left: Home Icon & Logo -->
+            <div class="flex items-center gap-3 md:gap-5">
+                <!-- Home Link -->
+                <a href="index.html"
+                    class="p-2 text-slate-500 hover:text-guardian-primary hover:bg-blue-50 rounded-lg transition-all group"
+                    aria-label="Go to Home">
+                    <i data-lucide="home" class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
+
+                <div class="w-px h-6 bg-slate-200 hidden sm:block"></div>
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div
+                        class="w-8 h-8 bg-guardian-primary rounded-lg flex items-center justify-center group-hover:bg-guardian-secondary transition-colors">
+                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-xl text-guardian-dark tracking-tight">Guardian<span
+                            class="text-guardian-primary">BPO</span></span>
+                </a>
+            </div>
+
+            <!-- Middle: Nav Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#" class="hover:text-guardian-primary transition-colors">Solutions</a>
+                <a href="#" class="hover:text-guardian-primary transition-colors">Industries</a>
+                <a href="about.html" class="hover:text-guardian-primary transition-colors">About Us</a>
+                <a href="#" class="text-guardian-primary font-semibold">FAQ</a>
+            </div>
+
+            <!-- Right: CTA -->
+            <a href="#contact"
+                class="bg-guardian-dark text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20">
+                Partner With Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main FAQ Section -->
+    <main class="flex-grow">
+        <section class="py-20 md:py-32 relative overflow-hidden">
+            <!-- Subtle Background Accents -->
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-gradient-to-b from-blue-50/50 to-transparent -z-10 blur-3xl">
+            </div>
+
+            <div class="container mx-auto px-6 max-w-3xl">
+                <!-- Header -->
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center justify-center p-3 bg-blue-50 rounded-2xl text-guardian-primary mb-6 border border-blue-100">
+                        <i data-lucide="help-circle" class="w-6 h-6"></i>
+                    </div>
+                    <h1 class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-dark mb-6 tracking-tight">
+                        Frequently Asked Questions
+                    </h1>
+                    <p class="text-slate-600 text-lg md:text-xl font-light">
+                        Got questions? We have answers. Explore the details below to understand our enterprise
+                        outsourcing framework and operational standards.
+                    </p>
+                </div>
+
+                <!-- FAQ Accordion Container -->
+                <div class="space-y-4 reveal" style="animation-delay: 0.2s;">
+
+                    <!-- FAQ Item 1 -->
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-slate-300 hover:shadow-sm">
+                        <button
+                            class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none group"
+                            onclick="toggleFaq(this)">
+                            <h4
+                                class="font-semibold text-lg text-guardian-dark group-hover:text-guardian-primary transition-colors">
+                                What is your minimum seat requirement?</h4>
+                            <div
+                                class="bg-slate-50 p-2 rounded-full group-hover:bg-blue-50 transition-colors ml-4 shrink-0">
+                                <i data-lucide="chevron-down"
+                                    class="faq-icon w-5 h-5 text-slate-500 group-hover:text-guardian-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div
+                                    class="px-6 pb-6 text-slate-600 leading-relaxed text-base border-t border-slate-100 pt-4 mt-1">
+                                    We cater to businesses of all sizes. Our typical minimum starts at <strong>5
+                                        dedicated agents</strong> to ensure proper management, redundancy, and quality
+                                    assurance. However, we are happy to discuss custom pilot programs specifically
+                                    tailored to your unique operational needs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-slate-300 hover:shadow-sm">
+                        <button
+                            class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none group"
+                            onclick="toggleFaq(this)">
+                            <h4
+                                class="font-semibold text-lg text-guardian-dark group-hover:text-guardian-primary transition-colors">
+                                How do you ensure data security?</h4>
+                            <div
+                                class="bg-slate-50 p-2 rounded-full group-hover:bg-blue-50 transition-colors ml-4 shrink-0">
+                                <i data-lucide="chevron-down"
+                                    class="faq-icon w-5 h-5 text-slate-500 group-hover:text-guardian-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div
+                                    class="px-6 pb-6 text-slate-600 leading-relaxed text-base border-t border-slate-100 pt-4 mt-1">
+                                    Data sovereignty is embedded in our architecture. We are <strong>ISO 27001</strong>
+                                    and <strong>PCI-DSS compliant</strong>. Our physical facilities feature biometric
+                                    access controls, strict no-mobile-phone zones on production floors, clean-desk
+                                    policies, and we route all digital traffic through enterprise-grade firewalls.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div
+                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-slate-300 hover:shadow-sm">
+                        <button
+                            class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none group"
+                            onclick="toggleFaq(this)">
+                            <h4
+                                class="font-semibold text-lg text-guardian-dark group-hover:text-guardian-primary transition-colors">
+                                How fast can we launch operations?</h4>
+                            <div
+                                class="bg-slate-50 p-2 rounded-full group-hover:bg-blue-50 transition-colors ml-4 shrink-0">
+                                <i data-lucide="chevron-down"
+                                    class="faq-icon w-5 h-5 text-slate-500 group-hover:text-guardian-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div
+                                    class="px-6 pb-6 text-slate-600 leading-relaxed text-base border-t border-slate-100 pt-4 mt-1">
+                                    Deployment speed is a core competency. Depending on the complexity of your
+                                    requirements and domain-specific training needs, we can typically source, train, and
+                                    successfully launch a dedicated team within <strong>2 to 4 weeks</strong> from
+                                    contract signing.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="mt-12 text-center reveal" style="animation-delay: 0.4s;">
+                    <p class="text-slate-500 mb-4">Still have questions?</p>
+                    <a href="contact.html"
+                        class="inline-flex items-center gap-2 text-guardian-primary font-semibold hover:text-guardian-secondary transition-colors">
+                        Contact our support team
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-guardian-primary w-5 h-5"></i>
+                <span class="font-bold text-guardian-dark">GuardianBPO</span>
+            </div>
+            <p class="text-slate-500 text-sm">&copy; 2026 Guardian BPO Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 2. Enterprise Accordion Logic
+        function toggleFaq(buttonElement) {
+            const currentItem = buttonElement.closest('.faq-item');
+            const allItems = document.querySelectorAll('.faq-item');
+            const isActive = currentItem.classList.contains('active');
+
+            // Close all items first (Standard Enterprise accordion behavior)
+            allItems.forEach(item => {
+                item.classList.remove('active');
+
+                // Reset styling
+                item.classList.remove('border-guardian-primary', 'ring-1', 'ring-guardian-primary/10', 'shadow-md');
+                item.classList.add('border-slate-200');
+
+                // Reset icon color
+                const icon = item.querySelector('.faq-icon');
+                if (icon) {
+                    icon.classList.remove('text-guardian-primary');
+                    icon.classList.add('text-slate-500');
+                }
+            });
+
+            // If the clicked item was NOT active, open it and apply active styling
+            if (!isActive) {
+                currentItem.classList.add('active');
+
+                // Apply active styling
+                currentItem.classList.remove('border-slate-200');
+                currentItem.classList.add('border-guardian-primary', 'ring-1', 'ring-guardian-primary/10', 'shadow-md');
+
+                // Highlight icon
+                const icon = currentItem.querySelector('.faq-icon');
+                if (icon) {
+                    icon.classList.remove('text-slate-500');
+                    icon.classList.add('text-guardian-primary');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

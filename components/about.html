@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Guardian BPO</title>
+
+    <!-- Fonts: Inter for an Enterprise look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        guardian: {
+                            primary: '#2563eb', // Blue 600
+                            secondary: '#1e40af', // Blue 800
+                            dark: '#0f172a', // Slate 900
+                            accent: '#38bdf8', // Light Blue
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Hide scrollbar for swiping cards but allow functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Smooth transitions for Enterprise feel */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 3D Parallax Container Setup */
+        .tilt-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .tilt-element {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+
+        /* Grabbing cursors for swiper */
+        .swipe-container {
+            cursor: grab;
+        }
+
+        .swipe-container:active {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-guardian-primary selection:text-white">
+
+    <!-- Navigation (Enterprise Minimalist) -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-guardian-primary rounded-lg flex items-center justify-center">
+                    <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-xl text-guardian-dark tracking-tight">Guardian<span
+                        class="text-guardian-primary">BPO</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#" class="hover:text-guardian-primary transition-colors">Solutions</a>
+                <a href="#" class="hover:text-guardian-primary transition-colors">Industries</a>
+                <a href="#" class="text-guardian-primary font-semibold">About Us</a>
+                <a href="#" class="hover:text-guardian-primary transition-colors">Contact</a>
+            </div>
+            <a href="#contact"
+                class="bg-guardian-dark text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20">
+                Partner With Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main About Hero Section (Updated User Code) -->
+    <section id="about" class="py-20 md:py-32 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+
+                <!-- Left: 3D Parallax Image -->
+                <div class="w-full lg:w-1/2 reveal order-2 lg:order-1 relative tilt-container" id="tilt-wrapper">
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-10 -left-10 w-48 h-48 bg-guardian-primary/10 rounded-full blur-3xl -z-10">
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 w-48 h-48 bg-guardian-accent/10 rounded-full blur-3xl -z-10">
+                    </div>
+
+                    <!-- Main Image Wrapper with JS Tilt Class -->
+                    <div class="relative tilt-element shadow-2xl rounded-3xl bg-white p-2 border border-slate-100"
+                        id="tilt-card">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1000"
+                            alt="Professional Support Operations"
+                            class="rounded-2xl w-full object-cover aspect-[4/3] md:aspect-square">
+
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-8 -right-8 bg-guardian-dark p-6 md:p-8 rounded-2xl shadow-2xl text-white z-20 hidden md:block border border-slate-700 transform translate-z-10"
+                            style="transform: translateZ(50px);">
+                            <div class="flex items-center gap-4 mb-2">
+                                <i data-lucide="award" class="text-guardian-primary w-8 h-8"></i>
+                                <span class="text-4xl font-black text-white">10+</span>
+                            </div>
+                            <span class="text-slate-300 text-sm font-medium uppercase tracking-wider block">Years of
+                                Excellence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="w-full lg:w-1/2 reveal order-1 lg:order-2" style="animation-delay: 0.2s;">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-guardian-primary font-bold tracking-widest uppercase mb-6 text-xs border border-blue-100">
+                        <span class="w-2 h-2 rounded-full bg-guardian-primary animate-pulse"></span>
+                        About Guardian BPO
+                    </div>
+
+                    <h1
+                        class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-guardian-dark mb-6 leading-[1.1] tracking-tight">
+                        We Guard Your <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-guardian-primary to-guardian-accent">Brand
+                            Reputation</span>
+                    </h1>
+
+                    <p class="text-slate-600 text-lg md:text-xl mb-8 leading-relaxed font-light">
+                        In an era of digital noise, human connection remains the most powerful tool for brand loyalty.
+                        Guardian BPO was founded on the principle that every customer interaction is an opportunity to
+                        build unbreakable trust. We act as a seamless extension of your in-house team.
+                    </p>
+
+                    <div class="space-y-5 mb-10">
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <div
+                                class="mt-1 bg-white shadow-sm p-2 rounded-lg text-guardian-primary shrink-0 border border-slate-100">
+                                <i data-lucide="shield" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-guardian-dark font-bold mb-1">PCI-DSS Compliant Infrastructure</h3>
+                                <p class="text-slate-500 text-sm">Enterprise-grade security protocols protecting your
+                                    sensitive customer data at all times.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <div
+                                class="mt-1 bg-white shadow-sm p-2 rounded-lg text-guardian-primary shrink-0 border border-slate-100">
+                                <i data-lucide="globe-2" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-guardian-dark font-bold mb-1">Native-Level Cultural Alignment</h3>
+                                <p class="text-slate-500 text-sm">Proficient communicators who understand regional
+                                    nuances, ensuring authentic interactions.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <div
+                                class="mt-1 bg-white shadow-sm p-2 rounded-lg text-guardian-primary shrink-0 border border-slate-100">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-guardian-dark font-bold mb-1">24/7/365 Global Operations</h3>
+                                <p class="text-slate-500 text-sm">Sun-setting routing ensures your customers are
+                                    supported immediately, day or night.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#why-us"
+                        class="inline-flex items-center gap-3 px-8 py-4 bg-guardian-dark hover:bg-guardian-primary text-white font-semibold rounded-xl transition-all duration-300 group shadow-lg shadow-slate-900/20 hover:shadow-guardian-primary/30">
+                        Explore Our Architecture
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expanded Section: Swiping Cards (Core Values) -->
+    <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <span class="text-guardian-accent font-bold tracking-widest uppercase mb-3 block text-sm">The
+                        Guardian Ethos</span>
+                    <h2 class="font-heading text-3xl md:text-5xl font-bold leading-tight">
+                        Principles that drive our <br />operational excellence.
+                    </h2>
+                </div>
+                <!-- Desktop Navigation Buttons for Carousel -->
+                <div class="hidden md:flex gap-3">
+                    <button id="btn-prev"
+                        class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-guardian-accent transition-colors">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="btn-next"
+                        class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-guardian-accent transition-colors">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Swipe/Drag Carousel -->
+            <div class="relative -mx-6 px-6 md:mx-0 md:px-0">
+                <div id="swipe-wrapper"
+                    class="swipe-container flex gap-6 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-8 pt-4">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="min-w-[85vw] md:min-w-[400px] bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl snap-center hover:bg-slate-800 transition-colors select-none group">
+                        <div
+                            class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
+                            <i data-lucide="target" class="text-guardian-accent w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Zero-Defect Mentality</h3>
+                        <p class="text-slate-400 leading-relaxed">We engineer our workflows to eliminate human error
+                            before it reaches your customer. Quality assurance isn't a department; it's our operating
+                            system.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="min-w-[85vw] md:min-w-[400px] bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl snap-center hover:bg-slate-800 transition-colors select-none group">
+                        <div
+                            class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
+                            <i data-lucide="users" class="text-purple-400 w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Empowered Agents</h3>
+                        <p class="text-slate-400 leading-relaxed">We invest heavily in continuous training and cognitive
+                            wellness. An agent who feels valued delivers exponentially better customer experiences.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="min-w-[85vw] md:min-w-[400px] bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl snap-center hover:bg-slate-800 transition-colors select-none group">
+                        <div
+                            class="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+                            <i data-lucide="lock" class="text-emerald-400 w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Uncompromising Security</h3>
+                        <p class="text-slate-400 leading-relaxed">Data sovereignty and strict access controls are baked
+                            into our physical and digital architecture, ensuring your corporate assets remain
+                            impenetrable.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="min-w-[85vw] md:min-w-[400px] bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl snap-center hover:bg-slate-800 transition-colors select-none group">
+                        <div
+                            class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6 border border-orange-500/20 group-hover:scale-110 transition-transform">
+                            <i data-lucide="bar-chart-2" class="text-orange-400 w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Predictable Scaling</h3>
+                        <p class="text-slate-400 leading-relaxed">Whether you face seasonal spikes or viral growth, our
+                            elastic workforce protocols allow you to scale up seamlessly without sacrificing service
+                            quality.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Swipe Indicator -->
+            <div class="flex md:hidden justify-center items-center gap-2 mt-4 text-slate-500 text-sm">
+                <i data-lucide="move-horizontal" class="w-4 h-4"></i>
+                <span>Swipe to explore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="container mx-auto px-6 text-center text-slate-500 text-sm">
+            <p>&copy; 2026 Guardian BPO Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 2. Parallax 3D Hover Effect
+        const tiltWrapper = document.getElementById('tilt-wrapper');
+        const tiltCard = document.getElementById('tilt-card');
+
+        tiltWrapper.addEventListener('mousemove', (e) => {
+            const rect = tiltWrapper.getBoundingClientRect();
+            // Calculate mouse position relative to the center of the card
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            // Calculate rotation amount (adjust divisor for more/less effect)
+            const rotateX = -(y / 20);
+            const rotateY = (x / 20);
+
+            tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        tiltWrapper.addEventListener('mouseleave', () => {
+            // Reset to default on mouse leave
+            tiltCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+
+        // 3. Drag-to-Scroll / Swiping Carousel Logic
+        const slider = document.getElementById('swipe-wrapper');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        // Mouse Events for Desktop Dragging
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.scrollSnapType = 'none'; // Disable snap during drag for smoothness
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.scrollSnapType = 'x mandatory';
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.scrollSnapType = 'x mandatory';
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll-fast multiplier
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Button Controls for Desktop
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const cardWidth = 424; // approx card width + gap
+
+        if (btnPrev && btnNext) {
+            btnPrev.addEventListener('click', () => {
+                slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            });
+            btnNext.addEventListener('click', () => {
+                slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+
+</html>

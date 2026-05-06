@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Guardian BPO</title>
+
+    <!-- Fonts: Inter for an Enterprise look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        guardian: {
+                            primary: '#2563eb', // Blue 600
+                            secondary: '#1e40af', // Blue 800
+                            dark: '#0f172a', // Slate 900
+                            accent: '#38bdf8', // Light Blue
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Smooth Entrance Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide scrollbar for swiping cards on mobile */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Parallax 3D Card Setup */
+        .js-tilt-card {
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            will-change: transform;
+            transform-style: preserve-3d;
+        }
+
+        .tilt-inner {
+            transform: translateZ(30px);
+            /* Pushes content forward during 3D tilt */
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 antialiased selection:bg-guardian-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation (Enterprise Minimalist) -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+
+            <!-- Left: Home Icon & Logo -->
+            <div class="flex items-center gap-3 md:gap-5">
+                <a href="index.html"
+                    class="p-2 text-slate-500 hover:text-guardian-primary hover:bg-blue-50 rounded-lg transition-all group"
+                    aria-label="Go to Home">
+                    <i data-lucide="home" class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
+
+                <div class="w-px h-6 bg-slate-200 hidden sm:block"></div>
+
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div
+                        class="w-8 h-8 bg-guardian-primary rounded-lg flex items-center justify-center group-hover:bg-guardian-secondary transition-colors">
+                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-xl text-guardian-dark tracking-tight">Guardian<span
+                            class="text-guardian-primary">BPO</span></span>
+                </a>
+            </div>
+
+            <!-- Middle: Nav Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#" class="text-guardian-primary font-semibold">Solutions</a>
+                <a href="process.html" class="hover:text-guardian-primary transition-colors">How We Work</a>
+                <a href="testimonials.html" class="hover:text-guardian-primary transition-colors">Success Stories</a>
+                <a href="about.html" class="hover:text-guardian-primary transition-colors">About Us</a>
+                <a href="faq.html" class="hover:text-guardian-primary transition-colors">FAQ</a>
+            </div>
+
+            <!-- Right: CTA -->
+            <a href="#contact"
+                class="bg-guardian-dark text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20">
+                Partner With Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Services Section -->
+    <main class="flex-grow flex flex-col justify-center relative overflow-hidden">
+
+        <!-- Subtle Enterprise Grid Background -->
+        <div class="absolute inset-0 opacity-[0.03] z-0"
+            style="background-image: radial-gradient(#0f172a 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+        <section id="services" class="py-20 md:py-32 relative z-10">
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <!-- Section Header -->
+                <div class="text-center mb-16 md:mb-24 reveal flex flex-col items-center">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-guardian-primary font-bold tracking-widest uppercase mb-4 text-xs border border-blue-100">
+                        <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                        Our Solutions
+                    </div>
+                    <h1
+                        class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-guardian-dark mb-6 tracking-tight">
+                        Tailored For Your <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-guardian-primary to-guardian-accent">Success</span>
+                    </h1>
+                    <p class="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+                        From frontline omnichannel customer support to complex back-office data management, we engineer
+                        end-to-end operational solutions that empower you to focus purely on core business growth.
+                    </p>
+                </div>
+
+                <!-- Mobile: Swipeable | Desktop: Grid -->
+                <div
+                    class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 pb-8 pt-4 no-scrollbar reveal">
+
+                    <!-- Service 1: Customer Support -->
+                    <div
+                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/5 group flex flex-col h-full relative overflow-hidden">
+                        <!-- Top Gradient Accent -->
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+
+                        <div class="tilt-inner">
+                            <div
+                                class="w-16 h-16 bg-blue-50 text-guardian-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-guardian-primary group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-sm border border-blue-100 group-hover:border-transparent">
+                                <i data-lucide="headset" class="w-8 h-8"></i>
+                            </div>
+                            <h3
+                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-guardian-primary transition-colors">
+                                Customer Support</h3>
+                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">
+                                Omnichannel support across voice, email, and live chat designed for a frictionless
+                                customer journey.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-blue-500"></i> Inbound Voice Routing</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-blue-500"></i> Real-time Live Chat</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-blue-500"></i> SLA-driven Email Mgt</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Tech Helpdesk -->
+                    <div
+                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-900/5 group flex flex-col h-full relative overflow-hidden">
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+
+                        <div class="tilt-inner">
+                            <div
+                                class="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-indigo-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-sm border border-indigo-100 group-hover:border-transparent">
+                                <i data-lucide="laptop" class="w-8 h-8"></i>
+                            </div>
+                            <h3
+                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-indigo-600 transition-colors">
+                                Tech Helpdesk</h3>
+                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">
+                                Level 1 & 2 technical support resolving software, hardware, and specialized SaaS
+                                platform inquiries.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-indigo-500"></i> Remote Diagnostics</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-indigo-500"></i> Software Integration</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-indigo-500"></i> ITIL Ticket Management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Sales & Growth -->
+                    <div
+                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-purple-200 hover:shadow-2xl hover:shadow-purple-900/5 group flex flex-col h-full relative overflow-hidden">
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+
+                        <div class="tilt-inner">
+                            <div
+                                class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-purple-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-sm border border-purple-100 group-hover:border-transparent">
+                                <i data-lucide="trending-up" class="w-8 h-8"></i>
+                            </div>
+                            <h3
+                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-purple-600 transition-colors">
+                                Sales & Growth</h3>
+                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">
+                                Strategic outbound acquisition and lead generation frameworks built to fuel your revenue
+                                engine.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-purple-500"></i> Outbound Prospecting</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-purple-500"></i> B2B Appointment Setting</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-purple-500"></i> Pipeline Reactivation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Back Office -->
+                    <div
+                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/5 group flex flex-col h-full relative overflow-hidden">
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+
+                        <div class="tilt-inner">
+                            <div
+                                class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-sm border border-emerald-100 group-hover:border-transparent">
+                                <i data-lucide="database" class="w-8 h-8"></i>
+                            </div>
+                            <h3
+                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-emerald-600 transition-colors">
+                                Back Office</h3>
+                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">
+                                Secure, efficient data management, moderation, and administrative workflows with zero
+                                defect tolerance.
+                            </p>
+                            <ul
+                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-emerald-500"></i> Enterprise Data Entry</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-emerald-500"></i> Content Verification</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
+                                        class="w-5 h-5 text-emerald-500"></i> Billing & Order Ops</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Instruction to swipe on mobile -->
+                <div class="text-center mt-6 md:hidden text-slate-400 text-sm font-medium flex items-center justify-center gap-2 reveal"
+                    style="transition-delay: 0.2s">
+                    <i data-lucide="arrow-left-right" class="w-4 h-4"></i> Swipe to explore solutions
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="text-center reveal mt-16" style="transition-delay: 0.3s">
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center px-8 py-4 bg-guardian-dark text-white rounded-xl font-bold hover:bg-guardian-primary transition-colors shadow-lg shadow-slate-900/20 hover:shadow-guardian-primary/30 gap-3 group">
+                        Get Infrastructure Pricing
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-guardian-primary w-5 h-5"></i>
+                <span class="font-bold text-guardian-dark">GuardianBPO</span>
+            </div>
+            <p class="text-slate-500 text-sm">&copy; 2026 Guardian BPO Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 2. Scroll Reveal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger immediately on load
+        });
+
+        // 3. Desktop 3D Parallax Hover Effect
+        // Only initialize on non-touch devices (desktop) to save mobile performance
+        if (window.matchMedia("(pointer: fine)").matches) {
+            const tiltCards = document.querySelectorAll('.js-tilt-card');
+
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    // Calculate mouse position relative to the center of the card
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    // Division values determine how "steep" the tilt is
+                    const rotateX = -(y / 25);
+                    const rotateY = (x / 25);
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+
+                // Reset smoothly when mouse leaves
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
