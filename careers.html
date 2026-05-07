@@ -32,7 +32,10 @@
                             dark: '#171717',
                             gray: '#52525b',
                             light: '#f4f4f5',
-                            white: '#ffffff'
+                            white: '#ffffff',
+                            gold: '#D4AF37',
+                            goldLight: '#F9E4B7',
+                            goldDark: '#996515'
                         }
                     },
                     fontFamily: {
@@ -90,6 +93,16 @@
             color: #0a0a0a;
             margin-bottom: 0.5rem;
         }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #996515 0%, #D4AF37 50%, #F9E4B7 100%);
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F9E4B7 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 
@@ -99,11 +112,11 @@
     <nav class="fixed top-0 w-full z-50 glass">
         <div class="py-4 px-4 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-guardian-black rounded-sm flex items-center justify-center text-white shadow-lg">
+                <div class="w-10 h-10 gold-gradient rounded-sm flex items-center justify-center text-guardian-black shadow-lg">
                     <i data-lucide="shield" class="w-5 h-5"></i>
                 </div>
                 <a href="example.html" class="font-heading font-extrabold text-2xl tracking-tighter text-guardian-black uppercase">
-                    Guardian<span class="text-guardian-gray font-light">BPO</span>
+                    Guardian<span class="gold-text-gradient font-extrabold italic">BPO</span>
                 </a>
             </div>
             <a href="example.html" class="text-guardian-gray hover:text-guardian-black transition-colors font-medium text-sm tracking-wide uppercase flex items-center gap-2">
@@ -123,12 +136,33 @@
                 <div class="w-24 h-1 bg-guardian-black mx-auto mt-8"></div>
             </div>
 
-            <div class="bg-white p-8 md:p-12 rounded-sm shadow-2xl reveal active">
-                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeDShbFr19dBwcZRHMI4RYSwadNANCVZamEaITgCmDjE60z-g/formResponse" method="POST" target="_self" class="space-y-10">
+            <!-- Success Message Overlay -->
+            <div id="success-overlay" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-guardian-black/90 backdrop-blur-md">
+                <div class="bg-white p-12 rounded-sm max-w-md w-full text-center shadow-2xl border-t-4 border-guardian-gold">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+                        <i data-lucide="check" class="w-10 h-10 text-guardian-black"></i>
+                    </div>
+                    <h3 class="font-heading text-3xl font-extrabold text-guardian-black mb-4">Application Received</h3>
+                    <p class="text-guardian-gray mb-8 leading-relaxed">Your professional profile has been securely transmitted to our talent acquisition team. We will review your credentials and reach out shortly.</p>
+                    <a href="example.html" class="inline-block px-10 py-4 gold-gradient text-guardian-black font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all">
+                        Return to Home
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hidden Iframe for Silent Submission -->
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccess(); }"></iframe>
+
+            <div class="bg-white p-8 md:p-12 rounded-sm shadow-2xl reveal active border-t-4 border-guardian-gold">
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeDShbFr19dBwcZRHMI4RYSwadNANCVZamEaITgCmDjE60z-g/formResponse" 
+                      method="POST" 
+                      target="hidden_iframe" 
+                      onsubmit="submitted=true;"
+                      class="space-y-10">
                     
                     <!-- Section: Personal Information -->
                     <div>
-                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-black pl-4">Personal Information</h2>
+                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-gold pl-4">Personal Information</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
                                 <label class="label-text">Full Legal Name</label>
@@ -155,7 +189,7 @@
 
                     <!-- Section: Professional Background -->
                     <div>
-                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-black pl-4">Professional Background</h2>
+                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-gold pl-4">Professional Background</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
                                 <label class="label-text">Right to Work Status</label>
@@ -191,7 +225,7 @@
 
                     <!-- Section: Employment Preferences -->
                     <div>
-                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-black pl-4">Preferences & Availability</h2>
+                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-gold pl-4">Preferences & Availability</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
                                 <label class="label-text">FT or PT Employment?</label>
@@ -230,7 +264,7 @@
                     </div>
 
                     <div class="pt-6">
-                        <button type="submit" class="w-full bg-guardian-black text-white font-bold uppercase tracking-widest py-5 rounded-sm hover:bg-guardian-gray transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 transform duration-200">
+                        <button type="submit" class="w-full gold-gradient text-guardian-black font-bold uppercase tracking-widest py-5 rounded-sm hover:brightness-110 transition-all shadow-xl hover:shadow-gold-500/20 hover:-translate-y-1 transform duration-200">
                             Submit Application
                         </button>
                         <p class="text-center text-guardian-gray text-[10px] mt-6 uppercase tracking-widest">
@@ -242,19 +276,25 @@
         </div>
     </main>
 
-    <footer class="bg-guardian-black text-white py-12 border-t border-white/10">
+    <footer class="bg-guardian-black text-white py-12 border-t border-guardian-gold/20">
         <div class="container mx-auto px-6 max-w-7xl text-center">
             <div class="flex items-center justify-center gap-3 mb-6">
-                <div class="w-8 h-8 bg-white/10 rounded-sm flex items-center justify-center text-white">
+                <div class="w-8 h-8 gold-gradient rounded-sm flex items-center justify-center text-guardian-black">
                     <i data-lucide="shield" class="w-4 h-4"></i>
                 </div>
-                <span class="font-heading font-extrabold text-xl tracking-tighter uppercase">Guardian<span class="text-gray-500 font-light">BPO</span></span>
+                <span class="font-heading font-extrabold text-xl tracking-tighter uppercase">Guardian<span class="gold-text-gradient font-extrabold italic">BPO</span></span>
             </div>
             <p class="text-gray-500 text-xs uppercase tracking-[0.2em]">© 2026 Guardian BPO. Professional Outsourcing Excellence.</p>
         </div>
     </footer>
 
     <script>
+        var submitted = false;
+        function showSuccess() {
+            document.getElementById('success-overlay').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
         // Initialize Lucide Icons
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
