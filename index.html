@@ -4,130 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardian BPO | Enterprise Outsourcing</title>
+    <title>Guardian BPO | Premium Outsourcing Solutions</title>
 
-    <!-- Fonts: Inter for an Enterprise look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <meta name="description"
+        content="Guardian BPO provides world-class call center and outsourcing solutions. Elevate your business with our secure, scalable, and professional services.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Inter', 'sans-serif'],
-                    },
                     colors: {
                         guardian: {
-                            primary: '#2563eb', // Blue 600
-                            secondary: '#1e40af', // Blue 800
-                            dark: '#0f172a', // Slate 900
-                            accent: '#38bdf8', // Light Blue
+                            black: '#0a0a0a',
+                            dark: '#171717',
+                            gray: '#52525b',
+                            light: '#f4f4f5',
+                            white: '#ffffff',
+                            gold: '#D4AF37',
+                            goldLight: '#F9E4B7',
+                            goldDark: '#996515'
                         }
                     },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
                     },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        }
+                    backgroundImage: {
+                        'parallax-1': "url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')",
+                        'parallax-2': "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
+                        'parallax-3': "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop')"
                     }
                 }
             }
         }
     </script>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
-        /* Base Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
+        body {
+            background-color: #ffffff;
+            color: #171717;
         }
 
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        /* Hide scrollbar for swiping carousels */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Glassmorphism Utilities (Hero) */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
+        .glass-dark {
+            background: rgba(10, 10, 10, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        /* Smooth Parallax Transitions */
-        .parallax-layer {
-            transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
-            will-change: transform;
+        .gold-gradient {
+            background: linear-gradient(135deg, #996515 0%, #D4AF37 50%, #F9E4B7 100%);
         }
 
-        /* 3D Parallax Image/Cards Setup */
-        .tilt-container {
-            perspective: 1000px;
-            transform-style: preserve-3d;
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F9E4B7 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .tilt-element,
-        .js-tilt-card {
-            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
-            will-change: transform;
-            transform-style: preserve-3d;
+        .gold-shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
         }
 
-        .tilt-inner {
-            transform: translateZ(30px);
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
-        /* Dragging Cursors */
-        .swipe-container {
-            cursor: grab;
-        }
-
-        .swipe-container.active {
-            cursor: grabbing;
-        }
-
-        /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -135,956 +104,893 @@
             transform: translateY(0);
         }
 
-        /* Quote Watermark Effect */
-        .quote-watermark {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 8rem;
-            font-family: serif;
-            line-height: 1;
-            color: rgba(241, 245, 249, 0.8);
-            z-index: 0;
-            pointer-events: none;
-            user-select: none;
-            transition: color 0.4s ease, transform 0.4s ease;
+        /* Interactive Card Hover Effects */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .testimonial-card:hover .quote-watermark {
-            color: rgba(219, 234, 254, 0.5);
-            transform: scale(1.1) rotate(5deg);
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
         }
 
         /* FAQ Accordion Transitions */
-        .faq-answer-wrapper {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .faq-item.active .faq-answer-wrapper {
-            grid-template-rows: 1fr;
-        }
-
-        .faq-answer-inner {
-            overflow: hidden;
+        .faq-answer {
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease, opacity 0.4s ease;
+            max-height: 0;
             opacity: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            transform: translateY(-10px);
+            overflow: hidden;
         }
 
-        .faq-item.active .faq-answer-inner {
+        .faq-item.active .faq-answer {
+            max-height: 300px;
             opacity: 1;
-            transform: translateY(0);
-        }
-
-        .faq-icon {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
         }
 
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
         }
 
-        /* Process Node & Background */
-        .bg-grid-pattern {
-            background-image: linear-gradient(to right, #f1f5f9 1px, transparent 1px), linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
-            background-size: 40px 40px;
+        /* Parallax utility */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
-        .process-node {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        /* Hide scrollbar for horizontal swipeable areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
 
-        .group:hover .process-node {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.15), 0 8px 10px -6px rgba(37, 99, 235, 0.1);
-            border-color: #2563eb;
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Grayscale filter for images to maintain theme */
+        .theme-bw {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .theme-bw:hover {
+            filter: grayscale(0%);
         }
     </style>
 </head>
 
-<body
-    class="bg-slate-50 text-slate-800 antialiased selection:bg-guardian-primary selection:text-white flex flex-col min-h-screen">
+<body class="font-sans overflow-x-hidden antialiased selection:bg-guardian-black selection:text-white">
 
-    <!-- Sticky Navigation (Enterprise Minimalist) -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200">
-        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
-
-            <!-- Left: Home Icon & Logo -->
-            <div class="flex items-center gap-3 md:gap-5">
-                <a href="#hero"
-                    class="p-2 text-slate-500 hover:text-guardian-primary hover:bg-blue-50 rounded-lg transition-all group"
-                    aria-label="Go to Top">
-                    <i data-lucide="arrow-up" class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform"></i>
-                </a>
-
-                <div class="w-px h-6 bg-slate-200 hidden sm:block"></div>
-
-                <a href="#hero" class="flex items-center gap-2 group">
-                    <div
-                        class="w-8 h-8 bg-guardian-primary rounded-lg flex items-center justify-center group-hover:bg-guardian-secondary transition-colors">
-                        <i data-lucide="shield-check" class="text-white w-5 h-5"></i>
-                    </div>
-                    <span class="font-bold text-xl text-guardian-dark tracking-tight">Guardian<span
-                            class="text-guardian-primary">BPO</span></span>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass transition-all duration-300">
+        <!-- Top Row (Logo & Desktop Menu) -->
+        <div class="py-4 px-4 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 gold-gradient rounded-sm flex items-center justify-center text-guardian-black shadow-lg">
+                    <i data-lucide="shield" class="w-5 h-5"></i>
+                </div>
+                <a href="#" class="font-heading font-extrabold text-2xl tracking-tighter text-guardian-black uppercase">
+                    Guardian<span class="gold-text-gradient font-extrabold italic">BPO</span>
                 </a>
             </div>
 
-            <!-- Middle: Nav Links -->
-            <div class="hidden lg:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="#services" class="hover:text-guardian-primary transition-colors">Solutions</a>
-                <a href="#about" class="hover:text-guardian-primary transition-colors">About Us</a>
-                <a href="#process" class="hover:text-guardian-primary transition-colors">How We Work</a>
-                <a href="#testimonials" class="hover:text-guardian-primary transition-colors">Success Stories</a>
-                <a href="#faq" class="hover:text-guardian-primary transition-colors">FAQ</a>
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide uppercase">
+                <a href="#about" class="text-guardian-gray hover:text-guardian-black transition-colors relative group">
+                    About
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[2px] bg-guardian-black transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#services"
+                    class="text-guardian-gray hover:text-guardian-black transition-colors relative group">
+                    Services
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[2px] bg-guardian-black transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#process"
+                    class="text-guardian-gray hover:text-guardian-black transition-colors relative group">
+                    Process
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[2px] bg-guardian-black transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#why-us" class="text-guardian-gray hover:text-guardian-black transition-colors relative group">
+                    Why Us
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-[2px] bg-guardian-black transition-all group-hover:w-full"></span>
+                </a>
+                <a href="careers.html"
+                    class="px-7 py-2.5 gold-gradient text-guardian-black font-bold rounded-sm hover:brightness-110 transition-all shadow-xl hover:shadow-gold-500/20 hover:-translate-y-0.5 transform duration-200">
+                    Join Our Team
+                </a>
             </div>
+        </div>
 
-            <!-- Right: CTA -->
+        <!-- Mobile Swipeable Nav -->
+        <div class="md:hidden w-full px-4 pb-3 overflow-x-auto no-scrollbar flex items-center gap-3 snap-x">
+            <a href="#about"
+                class="snap-start shrink-0 px-5 py-2 bg-white border border-guardian-light rounded-sm text-xs font-bold text-guardian-black uppercase tracking-wider shadow-sm hover:border-guardian-black transition-colors">About</a>
+            <a href="#services"
+                class="snap-start shrink-0 px-5 py-2 bg-white border border-guardian-light rounded-sm text-xs font-bold text-guardian-black uppercase tracking-wider shadow-sm hover:border-guardian-black transition-colors">Services</a>
+            <a href="#process"
+                class="snap-start shrink-0 px-5 py-2 bg-white border border-guardian-light rounded-sm text-xs font-bold text-guardian-black uppercase tracking-wider shadow-sm hover:border-guardian-black transition-colors">Process</a>
+            <a href="#why-us"
+                class="snap-start shrink-0 px-5 py-2 bg-white border border-guardian-light rounded-sm text-xs font-bold text-guardian-black uppercase tracking-wider shadow-sm hover:border-guardian-black transition-colors">Why
+                Us</a>
             <a href="#contact"
-                class="bg-guardian-dark text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20">
-                Partner With Us
-            </a>
+                class="snap-start shrink-0 px-5 py-2 bg-guardian-black text-white rounded-sm text-xs font-bold uppercase tracking-wider shadow-md">Contact</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="flex-grow flex flex-col">
+    <!-- Hero Section (Parallax) -->
+    <header
+        class="relative min-h-[90vh] flex items-center justify-center parallax-bg bg-parallax-1 theme-bw mt-16 md:mt-0">
+        <div class="absolute inset-0 bg-black/60 z-0"></div> <!-- Overlay for contrast -->
 
-        <!-- 1. HERO SECTION -->
-        <section id="hero"
-            class="relative min-h-[calc(100svh-5rem)] flex items-center justify-center overflow-hidden bg-guardian-dark text-slate-50">
-
-            <!-- Dynamic Background Image -->
-            <div id="hero-bg" class="absolute inset-0 w-[105%] h-[105%] -left-[2.5%] -top-[2.5%] parallax-layer"
-                data-speed="-0.02">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920"
-                    alt="Modern BPO Center" class="w-full h-full object-cover grayscale-[20%]">
-            </div>
-
-            <!-- Enterprise Gradient Overlays -->
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/95 via-slate-900/80 to-guardian-dark"></div>
-            <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-guardian-primary/20 via-transparent to-transparent opacity-60 mix-blend-screen">
-            </div>
-
-            <!-- Floating Glassmorphism Elements (Hidden on mobile) -->
-            <div class="absolute top-1/4 right-[10%] hidden lg:flex flex-col gap-2 p-4 glass-panel rounded-2xl animate-float parallax-layer z-20"
-                data-speed="0.04">
-                <div class="flex items-center gap-3">
-                    <div
-                        class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
-                        <i data-lucide="shield" class="text-emerald-400 w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Security First</p>
-                        <p class="text-white font-bold">ISO 27001 Certified</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="absolute bottom-1/3 left-[10%] hidden lg:flex flex-col gap-2 p-4 glass-panel rounded-2xl animate-float-delayed parallax-layer z-20"
-                data-speed="0.06">
-                <div class="flex items-center gap-3">
-                    <div
-                        class="w-10 h-10 rounded-full bg-guardian-primary/20 flex items-center justify-center border border-guardian-primary/30">
-                        <i data-lucide="activity" class="text-guardian-accent w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Reliability SLA</p>
-                        <p class="text-white font-bold">99.9% Core Uptime</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Hero Content -->
-            <div
-                class="container mx-auto px-6 relative z-10 text-center flex flex-col items-center justify-center py-20">
-
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border border-white/10 opacity-0 animate-fade-in-up">
-                    <span class="relative flex h-2.5 w-2.5">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                    </span>
-                    <span class="text-xs font-semibold text-slate-300 tracking-wider uppercase">Global Operations
-                        Online</span>
-                </div>
-
-                <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight opacity-0 animate-fade-in-up"
-                    style="animation-delay: 0.1s;">
-                    Your Security in <br class="hidden md:block">
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">Global</span>
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-guardian-accent to-guardian-primary">Outsourcing</span>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto reveal">
+                <span class="text-gray-300 uppercase tracking-[0.3em] text-sm font-semibold mb-6 block">Elite
+                    Operational Infrastructure</span>
+                <h1
+                    class="font-heading font-extrabold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-8 tracking-tighter">
+                    Absolute <br /><span
+                        class="gold-text-gradient">Precision.</span>
                 </h1>
-
-                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto opacity-0 animate-fade-in-up font-light leading-relaxed"
-                    style="animation-delay: 0.2s">
-                    Guardian BPO delivers premium customer experiences through highly secure, infinitely scalable, and
-                    meticulously managed operational frameworks tailored to your brand.
+                <p class="text-lg md:text-xl text-gray-300 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
+                    We architect and manage world-class outsourcing solutions. Transforming your operational bottlenecks
+                    into streamlined, scalable advantages.
                 </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto opacity-0 animate-fade-in-up"
-                    style="animation-delay: 0.3s">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="#services"
-                        class="px-8 py-4 bg-guardian-primary hover:bg-blue-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-guardian-primary/20 hover:shadow-guardian-primary/40 flex items-center justify-center gap-2 group">
-                        Explore Infrastructure
-                        <i data-lucide="arrow-down" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
+                        class="w-full sm:w-auto px-8 py-4 bg-white text-guardian-black font-bold uppercase tracking-wide text-sm hover:bg-gray-200 transition-all rounded-sm">
+                        Explore Capabilities
+                    </a>
+                    <a href="#contact"
+                        class="w-full sm:w-auto px-8 py-4 bg-transparent border border-guardian-gold text-guardian-goldLight font-bold uppercase tracking-wide text-sm hover:bg-guardian-gold hover:text-guardian-black transition-all rounded-sm">
+                        Consult an Expert
                     </a>
                 </div>
+            </div>
+        </div>
 
-                <!-- Trusted By Minimal Strip -->
-                <div class="mt-20 pt-10 border-t border-white/10 w-full max-w-4xl opacity-0 animate-fade-in-up"
-                    style="animation-delay: 0.5s">
-                    <p class="text-sm text-slate-500 font-semibold tracking-widest uppercase mb-6">Securing operations
-                        for forward-thinking enterprises</p>
-                    <div
-                        class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                        <div class="flex items-center gap-2"><i data-lucide="hexagon" class="w-6 h-6"></i><span
-                                class="font-bold text-xl tracking-tighter">ApexCorp</span></div>
-                        <div class="flex items-center gap-2"><i data-lucide="triangle" class="w-6 h-6"></i><span
-                                class="font-bold text-xl tracking-tighter">NexusTech</span></div>
-                        <div class="flex items-center gap-2 hidden md:flex"><i data-lucide="circle-dot"
-                                class="w-6 h-6"></i><span class="font-bold text-xl tracking-tighter">OmniSys</span>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i data-lucide="arrow-down" class="w-6 h-6 opacity-70"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2
+                        class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-black mb-6 tracking-tight">
+                        The Standard of Excellence.</h2>
+                    <div class="w-20 h-1 gold-gradient mb-8"></div>
+                    <p class="text-guardian-gray mb-6 text-lg leading-relaxed">
+                        At Guardian BPO, we don't just fill seats; we engineer extensions of your brand. Born from the
+                        necessity of high-stakes reliability, we provide an infrastructure that elite businesses trust
+                        to handle their most critical customer interactions and back-office operations.
+                    </p>
+                    <p class="text-guardian-gray mb-8 text-lg leading-relaxed">
+                        Our philosophy is rooted in absolute transparency, relentless quality control, and the
+                        deployment of top-tier talent equipped with cutting-edge technology.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-8 border-t border-guardian-light pt-8">
+                        <div>
+                            <h4 class="text-4xl font-heading font-bold text-guardian-black mb-2">99.9%</h4>
+                            <p class="text-sm text-guardian-gray uppercase tracking-wider font-semibold">Uptime SLA</p>
                         </div>
-                        <div class="flex items-center gap-2 hidden sm:flex"><i data-lucide="box"
-                                class="w-6 h-6"></i><span class="font-bold text-xl tracking-tighter">Elevate</span>
+                        <div>
+                            <h4 class="text-4xl font-heading font-bold text-guardian-black mb-2">24/7</h4>
+                            <p class="text-sm text-guardian-gray uppercase tracking-wider font-semibold">Global
+                                Operations</p>
                         </div>
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- 2. SERVICES SECTION -->
-        <section id="services" class="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-[0.03] z-0"
-                style="background-image: radial-gradient(#0f172a 1px, transparent 1px); background-size: 32px 32px;">
-            </div>
-
-            <div class="container mx-auto px-6 max-w-7xl relative z-10">
-                <div class="text-center mb-16 md:mb-24 reveal flex flex-col items-center">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-guardian-primary font-bold tracking-widest uppercase mb-4 text-xs border border-blue-100">
-                        <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-                        Our Solutions
+                <div class="relative reveal">
+                    <div class="absolute inset-0 bg-guardian-black transform translate-x-4 translate-y-4 rounded-sm">
                     </div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-dark mb-6 tracking-tight">
-                        Tailored For Your <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-guardian-primary to-guardian-accent">Success</span>
-                    </h2>
-                    <p class="text-slate-600 text-lg max-w-3xl mx-auto font-light leading-relaxed">
-                        From frontline omnichannel customer support to complex back-office data management, we engineer
-                        end-to-end operational solutions.
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+                        alt="Corporate Office"
+                        class="relative z-10 w-full h-auto object-cover rounded-sm theme-bw shadow-2xl">
+
+                    <!-- Floating stat card -->
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-white p-6 shadow-2xl z-20 rounded-sm border border-guardian-light hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-guardian-black text-white flex items-center justify-center rounded-sm">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-guardian-black font-bold font-heading text-xl">ISO Certified</p>
+                                <p class="text-xs gold-text-gradient uppercase tracking-wider font-bold">Security & Quality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Divider -->
+    <section class="py-32 parallax-bg bg-parallax-2 relative theme-bw">
+        <div class="absolute inset-0 bg-black/80"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center reveal">
+            <i data-lucide="quote" class="w-12 h-12 text-gray-500 mx-auto mb-6 opacity-50"></i>
+            <h3 class="font-heading text-3xl md:text-5xl font-bold text-white max-w-4xl mx-auto leading-tight">
+                "Operational friction is the enemy of scale. We exist to absorb complexity so you can focus on growth."
+            </h3>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-guardian-light">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-guardian-black uppercase tracking-[0.2em] text-sm font-bold mb-4 block">Core
+                    Competencies</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-black mb-6 tracking-tight">
+                    Tailored Outsourcing Solutions</h2>
+                <div class="w-20 h-1 bg-guardian-black mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 border border-gray-200 hover-card group reveal cursor-pointer rounded-sm">
+                    <div
+                        class="w-14 h-14 bg-guardian-light text-guardian-black flex items-center justify-center mb-6 group-hover:gold-gradient transition-colors rounded-sm">
+                        <i data-lucide="headphones" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-guardian-black mb-4 group-hover:gold-text-gradient transition-all">Customer Experience</h3>
+                    <p class="text-guardian-gray text-sm leading-relaxed mb-6">
+                        Omnichannel inbound and outbound support that treats every interaction as an opportunity to
+                        build brand loyalty.
+                    </p>
+                    <ul class="space-y-2 text-sm text-guardian-black font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Inbound Care</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Retention Teams</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Complaint Resolution</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 border border-gray-200 hover-card group reveal cursor-pointer rounded-sm"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-14 h-14 bg-guardian-light text-guardian-black flex items-center justify-center mb-6 group-hover:bg-guardian-black group-hover:text-white transition-colors rounded-sm">
+                        <i data-lucide="monitor-smartphone" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-guardian-black mb-4">Technical Support</h3>
+                    <p class="text-guardian-gray text-sm leading-relaxed mb-6">
+                        Tier 1 to Tier 3 helpdesk solutions staffed by certified professionals who resolve complex
+                        issues efficiently.
+                    </p>
+                    <ul class="space-y-2 text-sm text-guardian-black font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> IT Helpdesk</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Software Troubleshooting</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Network Monitoring</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 border border-gray-200 hover-card group reveal cursor-pointer rounded-sm"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-14 h-14 bg-guardian-light text-guardian-black flex items-center justify-center mb-6 group-hover:bg-guardian-black group-hover:text-white transition-colors rounded-sm">
+                        <i data-lucide="trending-up" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-guardian-black mb-4">Revenue Generation</h3>
+                    <p class="text-guardian-gray text-sm leading-relaxed mb-6">
+                        Strategic sales, telemarketing, and lead generation designed to directly impact your bottom
+                        line.
+                    </p>
+                    <ul class="space-y-2 text-sm text-guardian-black font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> B2B/B2C Sales</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Lead Qualification</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Appointment Setting</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-8 border border-gray-200 hover-card group reveal cursor-pointer rounded-sm"
+                    style="transition-delay: 300ms;">
+                    <div
+                        class="w-14 h-14 bg-guardian-light text-guardian-black flex items-center justify-center mb-6 group-hover:bg-guardian-black group-hover:text-white transition-colors rounded-sm">
+                        <i data-lucide="database" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-guardian-black mb-4">Back Office Processing</h3>
+                    <p class="text-guardian-gray text-sm leading-relaxed mb-6">
+                        Secure, highly accurate data processing and administrative support to keep your operations lean.
+                    </p>
+                    <ul class="space-y-2 text-sm text-guardian-black font-medium">
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Data Entry & Mining</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Order Processing</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-guardian-gray"></i> Content Moderation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <span
+                        class="text-guardian-black uppercase tracking-[0.2em] text-sm font-bold mb-4 block">Integration
+                        Framework</span>
+                    <h2
+                        class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-black mb-6 tracking-tight">
+                        How We Deploy.</h2>
+                    <div class="w-20 h-1 bg-guardian-black mb-8"></div>
+                    <p class="text-guardian-gray text-lg mb-8 leading-relaxed">
+                        Transitioning operations shouldn't be a risk. We utilize a highly structured, phased deployment
+                        methodology to ensure zero downtime and immediate alignment with your brand standards.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-6 group">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-guardian-black text-white flex items-center justify-center font-bold font-heading z-10 shadow-lg group-hover:scale-110 transition-transform">
+                                    1</div>
+                                <div
+                                    class="w-0.5 h-full bg-guardian-light mt-2 group-hover:bg-guardian-black transition-colors">
+                                </div>
+                            </div>
+                            <div class="pb-6">
+                                <h4 class="text-xl font-bold text-guardian-black mb-2">Discovery & Architecture</h4>
+                                <p class="text-guardian-gray text-sm leading-relaxed">Deep-dive analysis of your
+                                    workflows, KPIs, and technology stack to architect a bespoke operational blueprint.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-guardian-black text-white flex items-center justify-center font-bold font-heading z-10 shadow-lg group-hover:scale-110 transition-transform">
+                                    2</div>
+                                <div
+                                    class="w-0.5 h-full bg-guardian-light mt-2 group-hover:bg-guardian-black transition-colors">
+                                </div>
+                            </div>
+                            <div class="pb-6">
+                                <h4 class="text-xl font-bold text-guardian-black mb-2">Precision Recruiting</h4>
+                                <p class="text-guardian-gray text-sm leading-relaxed">Leveraging our rigorous vetting
+                                    protocols to acquire talent that matches not just the skill requirement, but your
+                                    cultural profile.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-guardian-black text-white flex items-center justify-center font-bold font-heading z-10 shadow-lg group-hover:scale-110 transition-transform">
+                                    3</div>
+                                <div
+                                    class="w-0.5 h-full bg-guardian-light mt-2 group-hover:bg-guardian-black transition-colors">
+                                </div>
+                            </div>
+                            <div class="pb-6">
+                                <h4 class="text-xl font-bold text-guardian-black mb-2">Immersion Training</h4>
+                                <p class="text-guardian-gray text-sm leading-relaxed">Intensive, brand-specific training
+                                    environments complete with nesting periods and simulated interactions.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-guardian-black text-white flex items-center justify-center font-bold font-heading z-10 shadow-lg group-hover:scale-110 transition-transform">
+                                    4</div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-guardian-black mb-2">Go-Live & Optimization</h4>
+                                <p class="text-guardian-gray text-sm leading-relaxed">Seamless launch followed by
+                                    continuous QA, performance analytics, and strategic refinement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center justify-center reveal">
+                    <!-- Abstract geometric representation of process -->
+                    <div class="relative w-full aspect-square max-w-md">
+                        <div class="absolute inset-0 bg-guardian-light rounded-full border border-gray-200"></div>
+                        <div
+                            class="absolute inset-4 bg-white rounded-full border border-gray-200 shadow-xl flex items-center justify-center">
+                            <div
+                                class="absolute inset-8 bg-guardian-black rounded-full text-white flex flex-col items-center justify-center text-center p-6 shadow-2xl border-4 border-guardian-gold">
+                                <i data-lucide="layers" class="w-12 h-12 mb-4 gold-text-gradient"></i>
+                                <span
+                                    class="font-heading font-bold text-xl uppercase tracking-widest gold-text-gradient">Systematic<br />Scale</span>
+                            </div>
+                        </div>
+                        <!-- Decorative nodes -->
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white border-2 border-guardian-black rounded-full flex items-center justify-center shadow-lg">
+                            <i data-lucide="search" class="w-6 h-6 text-guardian-black"></i></div>
+                        <div
+                            class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white border-2 border-guardian-black rounded-full flex items-center justify-center shadow-lg">
+                            <i data-lucide="users" class="w-6 h-6 text-guardian-black"></i></div>
+                        <div
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-16 h-16 bg-white border-2 border-guardian-black rounded-full flex items-center justify-center shadow-lg">
+                            <i data-lucide="book-open" class="w-6 h-6 text-guardian-black"></i></div>
+                        <div
+                            class="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white border-2 border-guardian-black rounded-full flex items-center justify-center shadow-lg">
+                            <i data-lucide="rocket" class="w-6 h-6 text-guardian-black"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section (Parallax) -->
+    <section id="why-us" class="py-24 parallax-bg bg-parallax-3 relative theme-bw">
+        <div class="absolute inset-0 bg-guardian-black/90"></div>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-gray-400 uppercase tracking-[0.2em] text-sm font-bold mb-4 block">The Guardian
+                    Advantage</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Built for
+                    Security & Scale.</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-dark p-10 rounded-sm hover-card reveal">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-white mb-6"></i>
+                    <h3 class="font-heading text-xl font-bold text-white mb-4">Enterprise Security</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Data integrity is our baseline. Compliant with strict international standards, featuring
+                        isolated networks, restricted physical access floors, and comprehensive encryption protocols.
                     </p>
                 </div>
 
-                <div
-                    class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 pb-8 pt-4 no-scrollbar reveal">
-                    <!-- Service 1 -->
-                    <div
-                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/5 group flex flex-col h-full relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                        <div class="tilt-inner">
-                            <div
-                                class="w-16 h-16 bg-blue-50 text-guardian-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-guardian-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                                <i data-lucide="headset" class="w-8 h-8"></i>
-                            </div>
-                            <h3
-                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-guardian-primary transition-colors">
-                                Customer Support</h3>
-                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">Omnichannel support across
-                                voice, email, and live chat designed for a frictionless customer journey.</p>
-                            <ul
-                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-blue-500"></i> Inbound Voice Routing</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-blue-500"></i> Real-time Live Chat</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-blue-500"></i> SLA-driven Email Mgt</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div
-                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-900/5 group flex flex-col h-full relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                        <div class="tilt-inner">
-                            <div
-                                class="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-indigo-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                                <i data-lucide="laptop" class="w-8 h-8"></i>
-                            </div>
-                            <h3
-                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-indigo-600 transition-colors">
-                                Tech Helpdesk</h3>
-                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">Level 1 & 2 technical support
-                                resolving software, hardware, and specialized SaaS platform inquiries.</p>
-                            <ul
-                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-indigo-500"></i> Remote Diagnostics</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-indigo-500"></i> Software Integration</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-indigo-500"></i> ITIL Ticket Management</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div
-                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-purple-200 hover:shadow-2xl hover:shadow-purple-900/5 group flex flex-col h-full relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                        <div class="tilt-inner">
-                            <div
-                                class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-purple-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                                <i data-lucide="trending-up" class="w-8 h-8"></i>
-                            </div>
-                            <h3
-                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-purple-600 transition-colors">
-                                Sales & Growth</h3>
-                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">Strategic outbound acquisition
-                                and lead generation frameworks built to fuel your revenue engine.</p>
-                            <ul
-                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-purple-500"></i> Outbound Prospecting</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-purple-500"></i> B2B Appt. Setting</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-purple-500"></i> Pipeline Reactivation</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div
-                        class="js-tilt-card min-w-[300px] snap-center shrink-0 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 hover:border-emerald-200 hover:shadow-2xl hover:shadow-emerald-900/5 group flex flex-col h-full relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                        <div class="tilt-inner">
-                            <div
-                                class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                                <i data-lucide="database" class="w-8 h-8"></i>
-                            </div>
-                            <h3
-                                class="font-heading text-2xl font-bold mb-4 text-guardian-dark group-hover:text-emerald-600 transition-colors">
-                                Back Office</h3>
-                            <p class="text-slate-500 mb-8 text-base leading-relaxed grow">Secure, efficient data
-                                management, moderation, and administrative workflows.</p>
-                            <ul
-                                class="text-sm text-slate-700 font-medium space-y-3 mt-auto pt-6 border-t border-slate-100">
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-emerald-500"></i> Enterprise Data Entry</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-emerald-500"></i> Content Verification</li>
-                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2"
-                                        class="w-5 h-5 text-emerald-500"></i> Billing & Order Ops</li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- Feature 2 -->
+                <div class="glass-dark p-10 rounded-sm hover-card reveal" style="transition-delay: 100ms;">
+                    <i data-lucide="cpu" class="w-10 h-10 text-white mb-6"></i>
+                    <h3 class="font-heading text-xl font-bold text-white mb-4">Omnichannel Tech</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Agnostic integration with your existing CRM/ERP, or deployment of our proprietary unified
+                        communications platforms ensuring seamless visibility across voice, chat, email, and social.
+                    </p>
                 </div>
 
-                <div
-                    class="text-center mt-6 md:hidden text-slate-400 text-sm font-medium flex items-center justify-center gap-2 reveal">
-                    <i data-lucide="arrow-left-right" class="w-4 h-4"></i> Swipe to explore solutions
+                <!-- Feature 3 -->
+                <div class="glass-dark p-10 rounded-sm hover-card reveal" style="transition-delay: 200ms;">
+                    <i data-lucide="briefcase" class="w-10 h-10 text-white mb-6"></i>
+                    <h3 class="font-heading text-xl font-bold text-white mb-4">Elite Workforce</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We compensate above market rates to attract top 5% talent. The result? Lower attrition, higher
+                        first-call resolution, and agents capable of handling complex, high-stress interactions.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 3. ABOUT SECTION -->
-        <section id="about" class="py-20 md:py-32 bg-white overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-white border-b border-gray-100">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <h2
+                class="font-heading text-3xl md:text-4xl font-extrabold text-guardian-black mb-16 text-center tracking-tight reveal">
+                Trusted by Industry Leaders</h2>
 
-                    <!-- Left: 3D Parallax Image -->
-                    <div class="w-full lg:w-1/2 reveal order-2 lg:order-1 relative tilt-container"
-                        id="tilt-wrapper-about">
-                        <div
-                            class="absolute -top-10 -left-10 w-48 h-48 bg-guardian-primary/10 rounded-full blur-3xl -z-10">
-                        </div>
-                        <div
-                            class="absolute -bottom-10 -right-10 w-48 h-48 bg-guardian-accent/10 rounded-full blur-3xl -z-10">
-                        </div>
-
-                        <div class="relative tilt-element shadow-2xl rounded-3xl bg-white p-2 border border-slate-100"
-                            id="tilt-card-about">
-                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1000"
-                                alt="Professional Support Operations"
-                                class="rounded-2xl w-full object-cover aspect-[4/3] md:aspect-square">
-
-                            <div class="absolute -bottom-8 -right-8 bg-guardian-dark p-6 md:p-8 rounded-2xl shadow-2xl text-white z-20 hidden md:block border border-slate-700"
-                                style="transform: translateZ(50px);">
-                                <div class="flex items-center gap-4 mb-2">
-                                    <i data-lucide="award" class="text-guardian-primary w-8 h-8"></i>
-                                    <span class="text-4xl font-black text-white">10+</span>
-                                </div>
-                                <span class="text-slate-300 text-sm font-medium uppercase tracking-wider block">Years of
-                                    Excellence</span>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-guardian-light p-8 rounded-sm reveal border border-gray-200">
+                    <div class="flex gap-1 text-guardian-black mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                     </div>
+                    <p class="text-guardian-gray text-sm italic mb-6 leading-relaxed">
+                        "Guardian BPO didn't just take over our tier-1 support; they restructured it. Our CSAT scores
+                        jumped 22% in the first quarter, and their transparent reporting gives us absolute peace of
+                        mind."
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-guardian-black text-sm uppercase tracking-wider">Jonathan R.</h5>
+                        <p class="text-xs text-guardian-gray">VP Operations, TechFlow Inc.</p>
+                    </div>
+                </div>
 
-                    <!-- Right: Content -->
-                    <div class="w-full lg:w-1/2 reveal order-1 lg:order-2">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-guardian-primary font-bold tracking-widest uppercase mb-6 text-xs border border-blue-100">
-                            <span class="w-2 h-2 rounded-full bg-guardian-primary animate-pulse"></span>
-                            About Guardian BPO
-                        </div>
+                <div class="bg-guardian-light p-8 rounded-sm reveal border border-gray-200"
+                    style="transition-delay: 100ms;">
+                    <div class="flex gap-1 text-guardian-black mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-guardian-gray text-sm italic mb-6 leading-relaxed">
+                        "Scalability was our biggest challenge during the holiday surge. Guardian spun up a team of 50
+                        trained agents in record time, maintaining our strict quality standards without a hitch."
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-guardian-black text-sm uppercase tracking-wider">Sarah M.</h5>
+                        <p class="text-xs text-guardian-gray">Director of CX, E-Retail Global</p>
+                    </div>
+                </div>
 
-                        <h2
-                            class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-guardian-dark mb-6 leading-[1.1] tracking-tight">
-                            We Guard Your <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-guardian-primary to-guardian-accent">Brand
-                                Reputation</span>
-                        </h2>
+                <div class="bg-guardian-light p-8 rounded-sm reveal border border-gray-200"
+                    style="transition-delay: 200ms;">
+                    <div class="flex gap-1 text-guardian-black mb-6">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-guardian-gray text-sm italic mb-6 leading-relaxed">
+                        "Their outbound sales division operates with surgical precision. We've seen a measurable drop in
+                        cost-per-acquisition and a higher LTV from the leads they process."
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-guardian-black text-sm uppercase tracking-wider">David K.</h5>
+                        <p class="text-xs text-guardian-gray">Chief Revenue Officer, FinServe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <p class="text-slate-600 text-lg md:text-xl mb-8 leading-relaxed font-light">
-                            In an era of digital noise, human connection remains the most powerful tool for brand
-                            loyalty. Guardian BPO was founded on the principle that every customer interaction is an
-                            opportunity to build unbreakable trust.
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-4xl font-extrabold text-guardian-black mb-4 tracking-tight">Common
+                    Inquiries.</h2>
+                <p class="text-guardian-gray">Clarity before commitment.</p>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border border-gray-200 rounded-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                        class="w-full px-6 py-5 text-left bg-guardian-light hover:bg-gray-200 flex justify-between items-center transition-colors">
+                        <span class="font-bold text-guardian-black text-sm uppercase tracking-wide">What is your minimum
+                            seat requirement?</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-guardian-black transition-transform duration-300 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer bg-white px-6">
+                        <p class="text-guardian-gray text-sm leading-relaxed">
+                            We cater to both scaling startups and established enterprises. Our engagements typically
+                            begin at a minimum of 5 dedicated seats to ensure proper management architecture and
+                            dedicated QA resources, scaling up to 500+ seats as required.
                         </p>
-
-                        <div class="space-y-5 mb-10">
-                            <div
-                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
-                                <div
-                                    class="mt-1 bg-white shadow-sm p-2 rounded-lg text-guardian-primary shrink-0 border border-slate-100">
-                                    <i data-lucide="shield" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-guardian-dark font-bold mb-1">PCI-DSS Compliant Infrastructure</h3>
-                                    <p class="text-slate-500 text-sm">Enterprise-grade security protocols protecting
-                                        your sensitive customer data.</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
-                                <div
-                                    class="mt-1 bg-white shadow-sm p-2 rounded-lg text-guardian-primary shrink-0 border border-slate-100">
-                                    <i data-lucide="globe-2" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-guardian-dark font-bold mb-1">Native-Level Cultural Alignment</h3>
-                                    <p class="text-slate-500 text-sm">Proficient communicators who understand regional
-                                        nuances.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3.1. CORE VALUES (Part of About) -->
-        <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
-            <div class="absolute inset-0 opacity-5"
-                style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;">
-            </div>
-
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal">
-                    <div class="max-w-2xl">
-                        <span class="text-guardian-accent font-bold tracking-widest uppercase mb-3 block text-sm">The
-                            Guardian Ethos</span>
-                        <h2 class="font-heading text-3xl md:text-5xl font-bold leading-tight">Principles that drive our
-                            <br />operational excellence.</h2>
-                    </div>
-                    <div class="hidden md:flex gap-3">
-                        <button id="btn-prev-values"
-                            class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-guardian-accent transition-colors">
-                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                        </button>
-                        <button id="btn-next-values"
-                            class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-guardian-accent transition-colors">
-                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                        </button>
                     </div>
                 </div>
 
-                <div class="relative -mx-6 px-6 md:mx-0 md:px-0 reveal" style="transition-delay: 0.2s">
-                    <div id="swipe-wrapper-values"
-                        class="swipe-container flex gap-6 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-8 pt-4">
-                        <!-- Value 1 -->
-                        <div
-                            class="min-w-[85vw] md:min-w-[400px] bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl snap-center hover:bg-slate-800 transition-colors select-none group">
-                            <div
-                                class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
-                                <i data-lucide="target" class="text-guardian-accent w-7 h-7"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Zero-Defect Mentality</h3>
-                            <p class="text-slate-400 leading-relaxed">We engineer our workflows to eliminate human error
-                                before it reaches your customer. Quality assurance is our operating system.</p>
-                        </div>
-                        <!-- Value 2 -->
-                        <div
-                            class="min-w-[85vw] md:min-w-[400px] bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl snap-center hover:bg-slate-800 transition-colors select-none group">
-                            <div
-                                class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
-                                <i data-lucide="users" class="text-purple-400 w-7 h-7"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Empowered Agents</h3>
-                            <p class="text-slate-400 leading-relaxed">We invest heavily in continuous training and
-                                cognitive wellness. An agent who feels valued delivers better experiences.</p>
-                        </div>
-                        <!-- Value 3 -->
-                        <div
-                            class="min-w-[85vw] md:min-w-[400px] bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl snap-center hover:bg-slate-800 transition-colors select-none group">
-                            <div
-                                class="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
-                                <i data-lucide="lock" class="text-emerald-400 w-7 h-7"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">Uncompromising Security</h3>
-                            <p class="text-slate-400 leading-relaxed">Data sovereignty and strict access controls are
-                                baked into our physical and digital architecture.</p>
-                        </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border border-gray-200 rounded-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                        class="w-full px-6 py-5 text-left bg-guardian-light hover:bg-gray-200 flex justify-between items-center transition-colors">
+                        <span class="font-bold text-guardian-black text-sm uppercase tracking-wide">How do you handle
+                            data security and privacy?</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-guardian-black transition-transform duration-300 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer bg-white px-6">
+                        <p class="text-guardian-gray text-sm leading-relaxed">
+                            Security is embedded in our infrastructure. We are fully compliant with ISO/IEC 27001, GDPR,
+                            and PCI-DSS standards. Our facilities feature biometric access, paperless environments,
+                            blocked USB ports, and enterprise-grade network firewalls.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border border-gray-200 rounded-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                        class="w-full px-6 py-5 text-left bg-guardian-light hover:bg-gray-200 flex justify-between items-center transition-colors">
+                        <span class="font-bold text-guardian-black text-sm uppercase tracking-wide">Can we integrate our
+                            existing CRM/Software?</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-guardian-black transition-transform duration-300 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer bg-white px-6">
+                        <p class="text-guardian-gray text-sm leading-relaxed">
+                            Absolutely. We operate a technology-agnostic environment. Our IT department will build
+                            secure VPN tunnels or API bridges to interface directly with Salesforce, Zendesk, HubSpot,
+                            or any proprietary systems you utilize.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border border-gray-200 rounded-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)"
+                        class="w-full px-6 py-5 text-left bg-guardian-light hover:bg-gray-200 flex justify-between items-center transition-colors">
+                        <span class="font-bold text-guardian-black text-sm uppercase tracking-wide">What is the typical
+                            deployment timeline?</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-guardian-black transition-transform duration-300 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer bg-white px-6">
+                        <p class="text-guardian-gray text-sm leading-relaxed">
+                            Standard deployments take 30 to 45 days from contract signing to "Go-Live". This encompasses
+                            requirement gathering, specialized recruitment, system integration, and comprehensive
+                            training. Expedited deployments (14-21 days) are available for urgent scaling needs.
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 4. PROCESS SECTION -->
-        <section id="process" class="py-20 md:py-32 bg-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-grid-pattern opacity-50 z-0"></div>
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white via-transparent to-white z-0">
-            </div>
-
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="text-center mb-20 reveal">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-guardian-primary font-bold tracking-widest uppercase mb-4 text-xs border border-blue-100">
-                        <i data-lucide="git-merge" class="w-3.5 h-3.5"></i> How We Work
-                    </div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-dark mb-6 tracking-tight">
-                        Our Operational Deployment</h2>
-                    <p class="text-slate-600 text-lg max-w-2xl mx-auto">A systematic, four-phase enterprise architecture
-                        designed to seamlessly integrate our talent with your objectives.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative max-w-6xl mx-auto"
-                    id="process-grid">
-                    <!-- Lines -->
-                    <div
-                        class="hidden lg:block absolute top-[2.25rem] left-[12.5%] right-[12.5%] h-0.5 bg-slate-100 -translate-y-1/2 z-0 rounded-full">
-                    </div>
-                    <div id="progress-line"
-                        class="hidden lg:block absolute top-[2.25rem] left-[12.5%] h-0.5 bg-gradient-to-r from-guardian-primary to-guardian-accent -translate-y-1/2 z-0 rounded-full w-0 transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(37,99,235,0.5)]">
-                    </div>
-
-                    <!-- Step 1 -->
-                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
-                        style="transition-delay: 0.1s">
-                        <div
-                            class="process-node w-[4.5rem] h-[4.5rem] bg-white border-4 border-slate-100 shadow-lg rounded-full flex items-center justify-center text-guardian-primary font-black text-2xl mb-8 group-hover:bg-blue-50">
-                            1</div>
-                        <div
-                            class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-transparent group-hover:border-slate-100">
-                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Discovery Phase</h4>
-                            <p class="text-slate-500 text-sm">We analyze your business architecture, define core KPIs,
-                                and identify operational bottlenecks.</p>
-                        </div>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
-                        style="transition-delay: 0.3s">
-                        <div
-                            class="process-node w-[4.5rem] h-[4.5rem] bg-white border-4 border-slate-100 shadow-lg rounded-full flex items-center justify-center text-guardian-primary font-black text-2xl mb-8 group-hover:bg-blue-50">
-                            2</div>
-                        <div
-                            class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-transparent group-hover:border-slate-100">
-                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Talent Sourcing</h4>
-                            <p class="text-slate-500 text-sm">HR specialists execute targeted recruitment, handpicking
-                                agents who match technical skills and culture.</p>
-                        </div>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
-                        style="transition-delay: 0.5s">
-                        <div
-                            class="process-node w-[4.5rem] h-[4.5rem] bg-white border-4 border-slate-100 shadow-lg rounded-full flex items-center justify-center text-guardian-primary font-black text-2xl mb-8 group-hover:bg-blue-50">
-                            3</div>
-                        <div
-                            class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-transparent group-hover:border-slate-100">
-                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Protocol Training</h4>
-                            <p class="text-slate-500 text-sm">Rigorous immersion in brand voice, product knowledge, and
-                                security protocols.</p>
-                        </div>
-                    </div>
-                    <!-- Step 4 -->
-                    <div class="group relative z-10 flex flex-col items-center text-center reveal"
-                        style="transition-delay: 0.7s">
-                        <div
-                            class="absolute top-0 left-1/2 -translate-x-1/2 w-[4.5rem] h-[4.5rem] bg-guardian-primary/30 rounded-full animate-ping group-hover:hidden">
-                        </div>
-                        <div
-                            class="process-node w-[4.5rem] h-[4.5rem] bg-guardian-dark border-4 border-slate-800 shadow-xl rounded-full flex items-center justify-center text-white mb-8 group-hover:bg-guardian-primary">
-                            <i data-lucide="rocket" class="w-6 h-6"></i>
-                        </div>
-                        <div
-                            class="bg-slate-50 p-6 rounded-2xl border border-slate-200 group-hover:border-guardian-primary/30">
-                            <h4 class="font-bold text-xl text-guardian-dark mb-3">Go Live & Scale</h4>
-                            <p class="text-slate-500 text-sm">Seamlessly launch operations with continuous QA and
-                                elastic scalability options.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. TESTIMONIALS SECTION -->
-        <section id="testimonials" class="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
-            <div
-                class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/4">
-            </div>
-
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 md:mb-20 reveal">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-guardian-primary font-bold tracking-widest uppercase mb-4 text-xs border border-blue-100">
-                        <i data-lucide="award" class="w-3.5 h-3.5"></i> Success Stories
-                    </div>
-                    <h2
-                        class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-guardian-dark tracking-tight mb-6">
-                        Trusted by <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-guardian-primary to-guardian-accent">Industry
-                            Leaders</span>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-guardian-black text-white relative overflow-hidden">
+        <div
+            class="absolute right-0 top-0 w-1/2 h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] z-0">
+        </div>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Initiate Contact.
                     </h2>
-                </div>
+                    <div class="w-20 h-1 bg-white mb-8"></div>
+                    <p class="text-gray-400 mb-10 text-lg">
+                        Ready to elevate your operational infrastructure? Provide your details below and our solutions
+                        architect will reach out within 24 hours to schedule a discovery call.
+                    </p>
 
-                <div class="hidden md:flex justify-end gap-3 mb-6 reveal pr-2">
-                    <button id="btn-prev-test"
-                        class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center hover:bg-slate-50 hover:text-guardian-primary shadow-sm">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button id="btn-next-test"
-                        class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center hover:bg-slate-50 hover:text-guardian-primary shadow-sm">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
-                </div>
-
-                <div class="relative -mx-6 px-6 md:mx-0 md:px-0 reveal" style="transition-delay: 0.2s">
-                    <div id="swipe-wrapper-test"
-                        class="swipe-container flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-6 md:gap-8 pb-12 pt-4">
-
-                        <!-- Review 1 -->
-                        <div
-                            class="testimonial-card group relative min-w-[85vw] md:min-w-[400px] max-w-[450px] snap-center shrink-0 p-8 md:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col select-none">
-                            <span class="quote-watermark">"</span>
-                            <div class="relative z-10 flex gap-1 text-amber-400 mb-8">
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
                             </div>
-                            <p
-                                class="relative z-10 text-slate-600 text-lg md:text-xl font-medium mb-10 leading-relaxed grow">
-                                "Guardian BPO transformed our customer support from a massive cost center into a
-                                tangible value driver. Their agents are remarkably professional."
-                            </p>
-                            <div
-                                class="relative z-10 flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 group-hover:border-blue-50">
-                                <div
-                                    class="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full flex items-center justify-center font-bold text-guardian-primary text-lg shrink-0">
-                                    JD</div>
-                                <div><span class="font-bold text-guardian-dark block text-lg">James Dalton</span><span
-                                        class="text-slate-500 text-sm font-medium">CEO, TechFlow Inc.</span></div>
+                            <div>
+                                <p class="font-bold text-sm uppercase tracking-wider">Global Headquarters</p>
+                                <p class="text-gray-400 text-sm">Plot No 176, at korang Road Near London Bakers,Sec I-10/2.</p>
                             </div>
                         </div>
-
-                        <!-- Review 2 -->
-                        <div
-                            class="testimonial-card group relative min-w-[85vw] md:min-w-[400px] max-w-[450px] snap-center shrink-0 p-8 md:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col select-none">
-                            <span class="quote-watermark">"</span>
-                            <div class="relative z-10 flex gap-1 text-amber-400 mb-8">
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm">
+                                <i data-lucide="phone" class="w-5 h-5 text-white"></i>
                             </div>
-                            <p
-                                class="relative z-10 text-slate-600 text-lg md:text-xl font-medium mb-10 leading-relaxed grow">
-                                "The scaling elasticity they offer is completely unmatched. We grew our support team by
-                                200% in two weeks during peak season without a hitch."
-                            </p>
-                            <div
-                                class="relative z-10 flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 group-hover:border-purple-50">
-                                <div
-                                    class="w-14 h-14 bg-gradient-to-br from-purple-50 to-purple-100 rounded-full flex items-center justify-center font-bold text-purple-600 text-lg shrink-0">
-                                    SM</div>
-                                <div><span class="font-bold text-guardian-dark block text-lg">Sarah Miller</span><span
-                                        class="text-slate-500 text-sm font-medium">Ops Director, Global Retail</span>
-                                </div>
+                            <div>
+                                <p class="font-bold text-sm uppercase tracking-wider">Direct Line</p>
+                                <p class="text-gray-400 text-sm">+1 (800) 555-0199</p>
                             </div>
                         </div>
-
-                        <!-- Review 3 -->
-                        <div
-                            class="testimonial-card group relative min-w-[85vw] md:min-w-[400px] max-w-[450px] snap-center shrink-0 p-8 md:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col select-none">
-                            <span class="quote-watermark">"</span>
-                            <div class="relative z-10 flex gap-1 text-amber-400 mb-8">
-                                <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i><i data-lucide="star"
-                                    class="w-5 h-5 fill-current"></i>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm">
+                                <i data-lucide="mail" class="w-5 h-5 text-white"></i>
                             </div>
-                            <p
-                                class="relative z-10 text-slate-600 text-lg md:text-xl font-medium mb-10 leading-relaxed grow">
-                                "Their technical expertise in Level 2 support is deeply impressive. They handle complex
-                                issues with an extraordinarily high resolution rate."
-                            </p>
-                            <div
-                                class="relative z-10 flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 group-hover:border-emerald-50">
-                                <div
-                                    class="w-14 h-14 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-600 text-lg shrink-0">
-                                    RK</div>
-                                <div><span class="font-bold text-guardian-dark block text-lg">Robert King</span><span
-                                        class="text-slate-500 text-sm font-medium">CTO, Nexus SaaS</span></div>
+                            <div>
+                                <p class="font-bold text-sm uppercase tracking-wider">Electronic Mail</p>
+                                <p class="text-gray-400 text-sm">info@guardianbpo.com</p>
                             </div>
                         </div>
-
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm">
+                                <i data-lucide="globe" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm uppercase tracking-wider">Web Presence</p>
+                                <p class="text-gray-400 text-sm">www.guardianbpo.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 flex items-center justify-center rounded-sm">
+                                <i data-lucide="briefcase" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm uppercase tracking-wider">Careers & Hiring</p>
+                                <p class="text-gray-400 text-sm">career@guardianbpo.com</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-sm shadow-2xl reveal">
+                    <h3 class="font-heading text-2xl font-bold text-guardian-black mb-8">Request a Proposal</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-guardian-black uppercase tracking-wider mb-2">First
+                                    Name</label>
+                                <input type="text"
+                                    class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-guardian-black transition-colors text-guardian-black"
+                                    placeholder="John">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-guardian-black uppercase tracking-wider mb-2">Last
+                                    Name</label>
+                                <input type="text"
+                                    class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-guardian-black transition-colors text-guardian-black"
+                                    placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold text-guardian-black uppercase tracking-wider mb-2">Corporate
+                                Email</label>
+                            <input type="email"
+                                class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-guardian-black transition-colors text-guardian-black"
+                                placeholder="john@company.com">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold text-guardian-black uppercase tracking-wider mb-2">Service
+                                of Interest</label>
+                            <select
+                                class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-guardian-black transition-colors text-guardian-black">
+                                <option>Customer Experience Support</option>
+                                <option>Technical IT Helpdesk</option>
+                                <option>Revenue Generation / Sales</option>
+                                <option>Back Office / Data Processing</option>
+                                <option>Comprehensive Solution</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs font-bold text-guardian-black uppercase tracking-wider mb-2">Operational
+                                Scope / Message</label>
+                            <textarea rows="4"
+                                class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-guardian-black transition-colors text-guardian-black resize-none"
+                                placeholder="Briefly describe your requirements and expected headcount..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full gold-gradient text-guardian-black font-bold uppercase tracking-wider py-4 rounded-sm hover:brightness-110 transition-colors shadow-lg">
+                            Submit Request
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
-
-        <!-- 6. FAQ SECTION -->
-        <section id="faq" class="py-20 md:py-32 bg-white relative overflow-hidden">
-            <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-gradient-to-b from-blue-50/50 to-transparent -z-10 blur-3xl">
-            </div>
-
-            <div class="container mx-auto px-6 max-w-3xl">
-                <div class="text-center mb-16 reveal">
-                    <div
-                        class="inline-flex items-center justify-center p-3 bg-blue-50 rounded-2xl text-guardian-primary mb-6 border border-blue-100">
-                        <i data-lucide="help-circle" class="w-6 h-6"></i>
-                    </div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-guardian-dark mb-6 tracking-tight">
-                        Frequently Asked Questions</h2>
-                    <p class="text-slate-600 text-lg font-light">Got questions? We have answers. Explore the details
-                        below to understand our enterprise outsourcing framework.</p>
-                </div>
-
-                <div class="space-y-4 reveal" style="animation-delay: 0.2s;">
-
-                    <div
-                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-slate-300">
-                        <button
-                            class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none group"
-                            onclick="toggleFaq(this)">
-                            <h4 class="font-semibold text-lg text-guardian-dark group-hover:text-guardian-primary">What
-                                is your minimum seat requirement?</h4>
-                            <div class="bg-slate-50 p-2 rounded-full group-hover:bg-blue-50 ml-4 shrink-0">
-                                <i data-lucide="chevron-down"
-                                    class="faq-icon w-5 h-5 text-slate-500 group-hover:text-guardian-primary"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer-wrapper">
-                            <div class="faq-answer-inner px-6 pb-6 text-slate-600 border-t border-slate-100 pt-4 mt-1">
-                                We cater to businesses of all sizes. Our typical minimum starts at <strong>5 dedicated
-                                    agents</strong> to ensure proper management. However, we are happy to discuss custom
-                                pilot programs.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-slate-300">
-                        <button
-                            class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none group"
-                            onclick="toggleFaq(this)">
-                            <h4 class="font-semibold text-lg text-guardian-dark group-hover:text-guardian-primary">How
-                                do you ensure data security?</h4>
-                            <div class="bg-slate-50 p-2 rounded-full group-hover:bg-blue-50 ml-4 shrink-0">
-                                <i data-lucide="chevron-down"
-                                    class="faq-icon w-5 h-5 text-slate-500 group-hover:text-guardian-primary"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer-wrapper">
-                            <div class="faq-answer-inner px-6 pb-6 text-slate-600 border-t border-slate-100 pt-4 mt-1">
-                                Data sovereignty is embedded in our architecture. We are <strong>ISO 27001</strong> and
-                                <strong>PCI-DSS compliant</strong>. Our facilities feature biometric access and
-                                clean-desk policies.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-slate-300">
-                        <button
-                            class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none group"
-                            onclick="toggleFaq(this)">
-                            <h4 class="font-semibold text-lg text-guardian-dark group-hover:text-guardian-primary">How
-                                fast can we launch operations?</h4>
-                            <div class="bg-slate-50 p-2 rounded-full group-hover:bg-blue-50 ml-4 shrink-0">
-                                <i data-lucide="chevron-down"
-                                    class="faq-icon w-5 h-5 text-slate-500 group-hover:text-guardian-primary"></i>
-                            </div>
-                        </button>
-                        <div class="faq-answer-wrapper">
-                            <div class="faq-answer-inner px-6 pb-6 text-slate-600 border-t border-slate-100 pt-4 mt-1">
-                                Depending on complexity, we can typically source, train, and successfully launch a
-                                dedicated team within <strong>2 to 4 weeks</strong> from contract signing.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-slate-900 py-12 border-t border-slate-800 text-slate-400">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <i data-lucide="shield-check" class="text-guardian-primary w-6 h-6"></i>
-                <span class="font-bold text-white text-lg">GuardianBPO</span>
+    <footer class="bg-guardian-light border-t border-gray-200 pt-20 pb-10">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-guardian-black rounded-sm flex items-center justify-center text-white">
+                            <i data-lucide="shield" class="w-4 h-4"></i>
+                        </div>
+                        <span
+                            class="font-heading font-extrabold text-xl tracking-tighter text-guardian-black uppercase">Guardian<span
+                                class="text-guardian-gray font-light">BPO</span></span>
+                    </div>
+                    <p class="text-guardian-gray mb-8 text-sm leading-relaxed">
+                        Precision outsourcing solutions engineered for the modern global enterprise. Absolute security,
+                        relentless quality.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-sm bg-white border border-gray-200 flex items-center justify-center text-guardian-black hover:bg-guardian-black hover:text-white hover:border-guardian-black transition-all">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-sm bg-white border border-gray-200 flex items-center justify-center text-guardian-black hover:bg-guardian-black hover:text-white hover:border-guardian-black transition-all">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-guardian-black uppercase tracking-wider text-sm mb-6">Enterprise</h5>
+                    <ul class="space-y-4 text-guardian-gray text-sm">
+                        <li><a href="#about" class="hover:text-guardian-black transition-colors">The Guardian
+                                Standard</a></li>
+                        <li><a href="#process" class="hover:text-guardian-black transition-colors">Deployment
+                                Process</a></li>
+                        <li><a href="#why-us" class="hover:text-guardian-black transition-colors">Security
+                                Infrastructure</a></li>
+                        <li><a href="#contact" class="hover:text-guardian-black transition-colors">Partner Inquiries</a>
+                        </li>
+                        <li><a href="mailto:career@guardianbpo.com" class="hover:text-guardian-black transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-guardian-black uppercase tracking-wider text-sm mb-6">Capabilities</h5>
+                    <ul class="space-y-4 text-guardian-gray text-sm">
+                        <li><a href="#services" class="hover:text-guardian-black transition-colors">Customer
+                                Experience</a></li>
+                        <li><a href="#services" class="hover:text-guardian-black transition-colors">Technical
+                                Helpdesk</a></li>
+                        <li><a href="#services" class="hover:text-guardian-black transition-colors">Revenue
+                                Generation</a></li>
+                        <li><a href="#services" class="hover:text-guardian-black transition-colors">Back Office
+                                Processing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-guardian-black uppercase tracking-wider text-sm mb-6">Intel</h5>
+                    <p class="text-guardian-gray mb-4 text-sm">Operational insights delivered to your inbox.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Corporate Email"
+                            class="bg-white border border-gray-200 rounded-sm px-4 py-2 w-full focus:outline-none focus:border-guardian-black text-sm text-guardian-black">
+                        <button
+                            class="bg-guardian-black text-white px-4 py-2 rounded-sm hover:bg-guardian-gray transition-colors">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <p class="text-sm">&copy; 2026 Guardian BPO Enterprises. All rights reserved.</p>
+
+            <div
+                class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-guardian-gray text-xs uppercase tracking-wider">
+                <span>© 2026 Guardian BPO. All rights reserved.</span>
+                <div class="flex gap-6 md:gap-8">
+                    <a href="#" class="hover:text-guardian-black transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-guardian-black transition-colors">Terms</a>
+                    <a href="#" class="hover:text-guardian-black transition-colors">Compliance</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Consolidated Scripts -->
     <script>
-        // 1. Init Icons
-        lucide.createIcons();
+        // Initialize Lucide Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
 
-        // 2. Global Scroll Reveal & Process Line Animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal');
-            const progressLine = document.getElementById('progress-line');
-            const processGrid = document.getElementById('process-grid');
-
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                reveals.forEach((reveal) => {
-                    if (reveal.getBoundingClientRect().top < windowHeight - 100) {
-                        reveal.classList.add('active');
-                    }
-                });
-
-                if (processGrid && progressLine) {
-                    if (processGrid.getBoundingClientRect().top < windowHeight - 200) {
-                        progressLine.style.width = '75%';
-                    }
+        // Reveal Animations on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
                 }
-            };
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll();
-        });
-
-        // 3. Desktop Parallax & Hover Effects (Only on fine pointers)
-        if (window.matchMedia("(pointer: fine)").matches) {
-
-            // Hero Background Mouse Parallax
-            const heroContainer = document.getElementById('hero');
-            const parallaxLayers = document.querySelectorAll('.parallax-layer');
-            if (heroContainer) {
-                heroContainer.addEventListener('mousemove', (e) => {
-                    const moveX = (e.clientX - window.innerWidth / 2);
-                    const moveY = (e.clientY - window.innerHeight / 2);
-                    parallaxLayers.forEach(layer => {
-                        const speed = layer.getAttribute('data-speed');
-                        layer.style.transform = `translate3d(${moveX * speed}px, ${moveY * speed}px, 0)`;
-                    });
-                });
-                heroContainer.addEventListener('mouseleave', () => {
-                    parallaxLayers.forEach(layer => layer.style.transform = `translate3d(0,0,0)`);
-                });
-            }
-
-            // 3D Tilt Cards (Services & About Image)
-            const tiltCards = document.querySelectorAll('.js-tilt-card, #tilt-wrapper-about');
-            tiltCards.forEach(card => {
-                card.addEventListener('mousemove', e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    // Lower divisor = steeper tilt
-                    card.style.transform = `perspective(1000px) rotateX(${-(y / 30)}deg) rotateY(${x / 30}deg) scale3d(1.02, 1.02, 1.02)`;
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)`;
-                });
-            });
-        }
-
-        // 4. Reusable Swipe/Drag Carousel Function
-        function setupCarousel(wrapperId, prevBtnId, nextBtnId) {
-            const slider = document.getElementById(wrapperId);
-            const btnPrev = document.getElementById(prevBtnId);
-            const btnNext = document.getElementById(nextBtnId);
-            if (!slider) return;
-
-            let isDown = false, startX, scrollLeft;
-
-            slider.addEventListener('mousedown', (e) => {
-                isDown = true;
-                slider.style.scrollSnapType = 'none';
-                slider.classList.add('active');
-                startX = e.pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-            });
-            slider.addEventListener('mouseleave', () => {
-                isDown = false;
-                slider.style.scrollSnapType = 'x mandatory';
-                slider.classList.remove('active');
-            });
-            slider.addEventListener('mouseup', () => {
-                isDown = false;
-                slider.style.scrollSnapType = 'x mandatory';
-                slider.classList.remove('active');
-            });
-            slider.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - slider.offsetLeft;
-                slider.scrollLeft = scrollLeft - ((x - startX) * 2);
-            });
-
-            if (btnPrev && btnNext) {
-                btnPrev.addEventListener('click', () => slider.scrollBy({ left: -450, behavior: 'smooth' }));
-                btnNext.addEventListener('click', () => slider.scrollBy({ left: 450, behavior: 'smooth' }));
             }
         }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Initial check on load
 
-        setupCarousel('swipe-wrapper-values', 'btn-prev-values', 'btn-next-values');
-        setupCarousel('swipe-wrapper-test', 'btn-prev-test', 'btn-next-test');
+        // FAQ Accordion Toggle
+        function toggleFaq(element) {
+            const parentItem = element.parentElement;
+            const isActive = parentItem.classList.contains('active');
 
-        // 5. FAQ Accordion Logic
-        function toggleFaq(btn) {
-            const currentItem = btn.closest('.faq-item');
-            const isActive = currentItem.classList.contains('active');
-
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active', 'border-guardian-primary', 'ring-1', 'ring-guardian-primary/10', 'shadow-md');
-                item.classList.add('border-slate-200');
-                if (item.querySelector('.faq-icon')) item.querySelector('.faq-icon').classList.replace('text-guardian-primary', 'text-slate-500');
+            // Close all others
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(faq => {
+                faq.classList.remove('active');
             });
 
+            // If it wasn't active before, open it
             if (!isActive) {
-                currentItem.classList.add('active', 'border-guardian-primary', 'ring-1', 'ring-guardian-primary/10', 'shadow-md');
-                currentItem.classList.remove('border-slate-200');
-                if (currentItem.querySelector('.faq-icon')) currentItem.querySelector('.faq-icon').classList.replace('text-slate-500', 'text-guardian-primary');
+                parentItem.classList.add('active');
             }
         }
     </script>

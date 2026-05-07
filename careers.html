@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities | Guardian BPO</title>
+
+    <meta name="description"
+        content="Join the elite team at Guardian BPO. Apply now for a rewarding career in professional outsourcing and customer experience.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        guardian: {
+                            black: '#0a0a0a',
+                            dark: '#171717',
+                            gray: '#52525b',
+                            light: '#f4f4f5',
+                            white: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f4f4f5;
+            color: #171717;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-input {
+            width: 100%;
+            border-bottom: 2px solid #e5e7eb;
+            background: transparent;
+            padding: 0.5rem 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0a0a0a;
+        }
+
+        .label-text {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #0a0a0a;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="font-sans overflow-x-hidden antialiased selection:bg-guardian-black selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="py-4 px-4 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-guardian-black rounded-sm flex items-center justify-center text-white shadow-lg">
+                    <i data-lucide="shield" class="w-5 h-5"></i>
+                </div>
+                <a href="example.html" class="font-heading font-extrabold text-2xl tracking-tighter text-guardian-black uppercase">
+                    Guardian<span class="text-guardian-gray font-light">BPO</span>
+                </a>
+            </div>
+            <a href="example.html" class="text-guardian-gray hover:text-guardian-black transition-colors font-medium text-sm tracking-wide uppercase flex items-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Main
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal active">
+                <span class="text-guardian-gray uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">Careers</span>
+                <h1 class="font-heading font-extrabold text-4xl md:text-6xl text-guardian-black mb-6 tracking-tight">Join Our Elite Team</h1>
+                <p class="text-lg text-guardian-gray font-light max-w-2xl mx-auto leading-relaxed">
+                    Submit your application below. We are looking for high-performance individuals to join our professional operations.
+                </p>
+                <div class="w-24 h-1 bg-guardian-black mx-auto mt-8"></div>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-sm shadow-2xl reveal active">
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeDShbFr19dBwcZRHMI4RYSwadNANCVZamEaITgCmDjE60z-g/formResponse" method="POST" target="_self" class="space-y-10">
+                    
+                    <!-- Section: Personal Information -->
+                    <div>
+                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-black pl-4">Personal Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="label-text">Full Legal Name</label>
+                                <input type="text" name="entry.927649612" class="form-input" placeholder="Enter your full name" required>
+                            </div>
+                            <div>
+                                <label class="label-text">Email Address</label>
+                                <input type="email" name="entry.1478762537" class="form-input" placeholder="example@email.com" required>
+                            </div>
+                            <div>
+                                <label class="label-text">Phone Number</label>
+                                <input type="tel" name="entry.1125708567" class="form-input" placeholder="+1234567890" required>
+                            </div>
+                            <div>
+                                <label class="label-text">Date of Birth</label>
+                                <input type="date" name="entry.498853291" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <label class="label-text">Residential Address</label>
+                            <textarea name="entry.1731899182" rows="2" class="form-input resize-none" placeholder="Street, City, Country" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Section: Professional Background -->
+                    <div>
+                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-black pl-4">Professional Background</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="label-text">Right to Work Status</label>
+                                <select name="entry.1644501535" class="form-input" required>
+                                    <option value="" disabled selected>Select status</option>
+                                    <option value="Citizen">Citizen</option>
+                                    <option value="Work Permit">Work Permit</option>
+                                    <option value="Visa Required">Visa Required</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="label-text">Educational Background</label>
+                                <input type="text" name="entry.468853742" class="form-input" placeholder="e.g. Bachelor's in CS" required>
+                            </div>
+                            <div>
+                                <label class="label-text">Total Years of Experience</label>
+                                <input type="number" name="entry.1494659390" class="form-input" placeholder="0" required>
+                            </div>
+                            <div>
+                                <label class="label-text">Inbound/Outbound Exp.</label>
+                                <input type="text" name="entry.1260024624" class="form-input" placeholder="e.g. 2 years Inbound" required>
+                            </div>
+                            <div>
+                                <label class="label-text">CRM Proficiency</label>
+                                <input type="text" name="entry.726838118" class="form-input" placeholder="e.g. Salesforce, Zendesk" required>
+                            </div>
+                            <div>
+                                <label class="label-text">Typing Speed (WPM)</label>
+                                <input type="number" name="entry.1854652084" class="form-input" placeholder="45" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section: Employment Preferences -->
+                    <div>
+                        <h2 class="font-heading text-xl font-bold text-guardian-black mb-8 border-l-4 border-guardian-black pl-4">Preferences & Availability</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="label-text">FT or PT Employment?</label>
+                                <select name="entry.1055188641" class="form-input" required>
+                                    <option value="" disabled selected>Select preference</option>
+                                    <option value="Full-Time">Full-Time</option>
+                                    <option value="Part-Time">Part-Time</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="label-text">Preferred Shift Type</label>
+                                <select name="entry.842308220" class="form-input" required>
+                                    <option value="" disabled selected>Select shift</option>
+                                    <option value="Day">Day</option>
+                                    <option value="Night">Night</option>
+                                    <option value="Rotational">Rotational</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="label-text">Salary Expectation</label>
+                                <input type="text" name="entry.482409614" class="form-input" placeholder="e.g. $50,000/year" required>
+                            </div>
+                            <div>
+                                <label class="label-text">Availability / Start Date</label>
+                                <input type="date" name="entry.992676733" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <label class="label-text">How did you hear about us?</label>
+                            <input type="text" name="entry.899167736" class="form-input" placeholder="e.g. LinkedIn, Referral" required>
+                        </div>
+                        <div class="mt-8">
+                            <label class="label-text">Additional Info</label>
+                            <textarea name="entry.1685048332" rows="3" class="form-input resize-none" placeholder="Tell us more about yourself..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="submit" class="w-full bg-guardian-black text-white font-bold uppercase tracking-widest py-5 rounded-sm hover:bg-guardian-gray transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 transform duration-200">
+                            Submit Application
+                        </button>
+                        <p class="text-center text-guardian-gray text-[10px] mt-6 uppercase tracking-widest">
+                            Secure Application Portal | Guardian BPO Infrastructure
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-guardian-black text-white py-12 border-t border-white/10">
+        <div class="container mx-auto px-6 max-w-7xl text-center">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <div class="w-8 h-8 bg-white/10 rounded-sm flex items-center justify-center text-white">
+                    <i data-lucide="shield" class="w-4 h-4"></i>
+                </div>
+                <span class="font-heading font-extrabold text-xl tracking-tighter uppercase">Guardian<span class="text-gray-500 font-light">BPO</span></span>
+            </div>
+            <p class="text-gray-500 text-xs uppercase tracking-[0.2em]">© 2026 Guardian BPO. Professional Outsourcing Excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Reveal Animations on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+
+</html>
