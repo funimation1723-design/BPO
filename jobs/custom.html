@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | Guardian BPO</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        guardian: {
+                            black: '#0a0a0a',
+                            dark: '#171717',
+                            gray: '#52525b',
+                            light: '#f4f4f5',
+                            white: '#ffffff',
+                            gold: '#D4AF37',
+                            goldLight: '#F9E4B7',
+                            goldDark: '#996515'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #996515 0%, #D4AF37 50%, #F9E4B7 100%);
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F9E4B7 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-panel {
+            background: rgba(23, 23, 23, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased selection:bg-guardian-gold selection:text-guardian-black">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#0a0a0a] border-b border-white/10 transition-all duration-500">
+        <div class="py-4 px-4 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 shrink-0">
+                <a href="../index.html" class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter text-white uppercase whitespace-nowrap">
+                    <img src="../assets/logo.png" alt="Logo" class="w-8 h-8 object-contain inline-block mr-2">
+                    Guardian <span class="gold-text-gradient font-extrabold italic">BPO</span>
+                </a>
+            </div>
+            <a href="../jobs.html" class="text-guardian-gray hover:text-white transition-colors text-sm uppercase tracking-widest font-bold flex items-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Openings
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Job Header -->
+            <div class="text-center mb-16 reveal active">
+                <span id="job-category" class="text-guardian-gold uppercase tracking-[0.4em] text-xs font-bold mb-4 block">Position Details</span>
+                <h1 id="job-title" class="font-heading font-extrabold text-4xl md:text-6xl text-white mb-6 tracking-tight uppercase">Loading Position...</h1>
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 font-medium">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-guardian-gold"></i>
+                        <span id="job-shift">Night Shift</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="users" class="w-4 h-4 text-guardian-gold"></i>
+                        <span id="job-gender">All Genders</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-guardian-gold"></i>
+                        <span>On-Site</span>
+                    </div>
+                </div>
+                <div class="w-24 h-1 gold-gradient mx-auto mt-8"></div>
+            </div>
+
+            <!-- Job Content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                
+                <!-- Left Column: Details -->
+                <div class="md:col-span-2 space-y-12">
+                    
+                    <!-- Description -->
+                    <div class="reveal active">
+                        <h2 class="font-heading text-xl font-bold text-white mb-6 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">Overview</h2>
+                        <p id="job-description" class="text-gray-400 leading-relaxed text-lg font-light">
+                            Loading description...
+                        </p>
+                    </div>
+
+                    <!-- Requirements -->
+                    <div class="reveal active" style="transition-delay: 100ms;">
+                        <h2 class="font-heading text-xl font-bold text-white mb-6 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">Requirements</h2>
+                        <ul id="job-requirements" class="space-y-4 text-gray-400">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="reveal active" style="transition-delay: 200ms;">
+                        <h2 class="font-heading text-xl font-bold text-white mb-6 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">Preferred Skills</h2>
+                        <div id="job-skills" class="flex flex-wrap gap-3">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sidebar / Action -->
+                <div class="space-y-8">
+                    <div class="glass-panel p-8 rounded-sm sticky top-32">
+                        <h3 class="font-heading text-lg font-bold text-white mb-4 uppercase tracking-tight">Ready to Apply?</h3>
+                        <p class="text-gray-400 text-sm mb-8 leading-relaxed">Join our elite team and elevate your professional career in a high-performance environment.</p>
+                        
+                        <a id="apply-button" href="../careers.html" class="block w-full py-4 gold-gradient text-guardian-black font-bold uppercase tracking-widest text-center text-sm rounded-sm hover:brightness-110 transition-all shadow-xl hover:shadow-gold-500/20">
+                            Apply Now
+                        </a>
+                        
+                        <div class="mt-8 pt-8 border-t border-white/5">
+                            <p class="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-4">Core Benefits</p>
+                            <ul class="space-y-3 text-xs text-gray-400">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-guardian-gold"></i> Competitive Salary</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-guardian-gold"></i> Premium Environment</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-guardian-gold"></i> Growth Opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-guardian-black text-white py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-7xl text-center">
+            <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em]">© 2026 Guardian BPO | Encrypted Talent Acquisition</p>
+        </div>
+    </footer>
+
+    <!-- Load Data -->
+    <script src="job-data.js"></script>
+    <script>
+        // Initialize Lucide
+        lucide.createIcons();
+
+        // Load Job Details from URL
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get('job')?.toUpperCase();
+            
+            if (jobId && jobData[jobId]) {
+                const data = jobData[jobId];
+                
+                // Update Text Content
+                document.getElementById('job-title').textContent = data.title;
+                document.getElementById('job-description').textContent = data.description;
+                document.getElementById('job-shift').textContent = data.shift;
+                document.getElementById('job-gender').textContent = data.gender;
+                
+                // Update Requirements
+                const reqList = document.getElementById('job-requirements');
+                data.requirements.forEach(req => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = `<i data-lucide="chevron-right" class="w-5 h-5 text-guardian-gold shrink-0 mt-0.5"></i> <span>${req}</span>`;
+                    reqList.appendChild(li);
+                });
+                
+                // Update Skills
+                const skillContainer = document.getElementById('job-skills');
+                data.skills.forEach(skill => {
+                    const span = document.createElement('span');
+                    span.className = 'px-4 py-2 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full uppercase tracking-widest';
+                    span.textContent = skill;
+                    skillContainer.appendChild(span);
+                });
+
+                // Update Apply Link
+                document.getElementById('apply-button').href = `../careers.html?job=${encodeURIComponent(data.title)}`;
+                
+                // Refresh Lucide Icons for dynamic content
+                lucide.createIcons();
+                
+                // Update Document Title
+                document.title = `${data.title} | Guardian BPO`;
+            } else {
+                // Handle 404 or missing job
+                document.getElementById('job-title').textContent = "Position Not Found";
+                document.getElementById('job-description').textContent = "The requested position could not be located in our current database.";
+                document.getElementById('apply-button').style.display = 'none';
+            }
+        };
+
+        // Scroll listener for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-guardian-black/95', 'py-2');
+                nav.classList.remove('bg-guardian-black/70', 'py-4');
+            } else {
+                nav.classList.remove('bg-guardian-black/95', 'py-2');
+                nav.classList.add('bg-guardian-black/70', 'py-4');
+            }
+        });
+    </script>
+</body>
+</html>
