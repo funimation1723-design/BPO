@@ -139,14 +139,16 @@
     <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#0a0a0a] border-b border-white/10 transition-all duration-500">
         <div class="py-4 px-4 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
             <div class="flex items-center gap-3 shrink-0">
-                <a href="index.html" class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter text-white uppercase whitespace-nowrap">
+                <a href="index.html"
+                    class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter text-white uppercase whitespace-nowrap">
                     Guardian <span class="gold-text-gradient font-extrabold italic">BPO</span>
                 </a>
             </div>
-            
+
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="jobs.html" class="text-guardian-gray hover:text-guardian-gold transition-colors font-medium text-sm tracking-wide uppercase flex items-center gap-2">
+                <a href="jobs.html"
+                    class="text-guardian-gray hover:text-guardian-gold transition-colors font-medium text-sm tracking-wide uppercase flex items-center gap-2">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Jobs
                 </a>
             </div>
@@ -160,34 +162,44 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-overlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-500 md:hidden"></div>
+        <div id="mobile-overlay" onclick="toggleMobileMenu()"
+            class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-500 md:hidden">
+        </div>
 
         <!-- Mobile Menu Sidebar -->
-        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-full md:w-[400px] bg-[#0a0a0a] z-[100] translate-x-full transition-transform duration-500 md:hidden border-l border-white/10 shadow-2xl flex flex-col">
+        <div id="mobile-menu"
+            class="fixed inset-y-0 right-0 w-full md:w-[400px] bg-[#0a0a0a] z-[100] translate-x-full transition-transform duration-500 md:hidden border-l border-white/10 shadow-2xl flex flex-col">
             <div class="p-6 flex justify-between items-center border-b border-white/5">
                 <div class="flex items-center gap-2">
                     <img src="assets/logo.png" alt="Logo" class="w-8 h-8 object-contain">
-                    <span class="font-heading font-extrabold text-xl text-white uppercase tracking-tighter">Guardian <span class="gold-text-gradient italic">BPO</span></span>
+                    <span class="font-heading font-extrabold text-xl text-white uppercase tracking-tighter">Guardian
+                        <span class="gold-text-gradient italic">BPO</span></span>
                 </div>
                 <button onclick="toggleMobileMenu()" class="text-white hover:text-guardian-gold transition-colors p-2">
                     <i data-lucide="x" class="w-8 h-8"></i>
                 </button>
             </div>
-            
+
             <div class="flex-1 overflow-y-auto py-12 px-8 flex flex-col gap-10">
                 <div class="flex flex-col gap-6">
                     <p class="text-guardian-gold uppercase tracking-[0.3em] text-[10px] font-bold">Navigation</p>
-                    <a href="index.html" onclick="toggleMobileMenu()" class="text-4xl font-heading font-bold text-white hover:text-guardian-gold transition-colors uppercase tracking-tighter">Home</a>
-                    <a href="jobs.html" onclick="toggleMobileMenu()" class="text-4xl font-heading font-bold text-white hover:text-guardian-gold transition-colors uppercase tracking-tighter">Job Openings</a>
-                    <a href="index.html#contact" onclick="toggleMobileMenu()" class="text-4xl font-heading font-bold text-white hover:text-guardian-gold transition-colors uppercase tracking-tighter">Contact</a>
+                    <a href="index.html" onclick="toggleMobileMenu()"
+                        class="text-4xl font-heading font-bold text-white hover:text-guardian-gold transition-colors uppercase tracking-tighter">Home</a>
+                    <a href="jobs.html" onclick="toggleMobileMenu()"
+                        class="text-4xl font-heading font-bold text-white hover:text-guardian-gold transition-colors uppercase tracking-tighter">Job
+                        Openings</a>
+                    <a href="index.html#contact" onclick="toggleMobileMenu()"
+                        class="text-4xl font-heading font-bold text-white hover:text-guardian-gold transition-colors uppercase tracking-tighter">Contact</a>
                 </div>
             </div>
 
             <div class="p-8 bg-white/5 border-t border-white/5">
                 <p class="text-guardian-gray text-[10px] uppercase tracking-widest mb-4 font-bold">Contact Support</p>
                 <div class="space-y-2">
-                    <p class="text-white text-sm font-medium flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4 text-guardian-gold"></i> +1 (509) 716-0425</p>
-                    <p class="text-white text-sm font-medium flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4 text-guardian-gold"></i> support@guardianbpo.com</p>
+                    <p class="text-white text-sm font-medium flex items-center gap-3"><i data-lucide="phone"
+                            class="w-4 h-4 text-guardian-gold"></i> +1 (509) 716-0425</p>
+                    <p class="text-white text-sm font-medium flex items-center gap-3"><i data-lucide="mail"
+                            class="w-4 h-4 text-guardian-gold"></i> support@guardianbpo.com</p>
                 </div>
             </div>
         </div>
@@ -197,15 +209,20 @@
     <header class="relative pt-48 pb-16 md:pt-60 md:pb-24 parallax-section bg-parallax-careers">
         <div class="absolute inset-0 bg-black/80 z-0"></div>
         <div class="max-w-4xl mx-auto relative z-10 px-6 text-center reveal active">
-            <span class="text-guardian-gold uppercase tracking-[0.3em] text-[10px] md:text-sm font-semibold mb-4 block">Secure Portal</span>
-            <h1 class="font-heading font-extrabold text-3xl md:text-6xl text-white mb-6 tracking-tight">Professional Application</h1>
-            
+            <span
+                class="text-guardian-gold uppercase tracking-[0.3em] text-[10px] md:text-sm font-semibold mb-4 block">Secure
+                Portal</span>
+            <h1 class="font-heading font-extrabold text-3xl md:text-6xl text-white mb-6 tracking-tight">Professional
+                Application</h1>
+
             <!-- Dynamic Job Title Display -->
-            <div id="job-selection" class="hidden mt-4 p-4 bg-white/5 border border-guardian-gold/20 rounded-sm backdrop-blur-sm inline-block">
+            <div id="job-selection"
+                class="hidden mt-4 p-4 bg-white/5 border border-guardian-gold/20 rounded-sm backdrop-blur-sm inline-block">
                 <p class="text-gray-400 text-[10px] uppercase tracking-widest mb-1">Applying for Position:</p>
-                <h2 id="selected-job-title" class="font-heading text-xl md:text-2xl font-bold gold-text-gradient uppercase tracking-tight"></h2>
+                <h2 id="selected-job-title"
+                    class="font-heading text-xl md:text-2xl font-bold gold-text-gradient uppercase tracking-tight"></h2>
             </div>
-            
+
             <div class="w-24 h-1 gold-gradient mx-auto mt-8"></div>
         </div>
     </header>
@@ -213,49 +230,62 @@
     <main class="pb-24 px-4 md:px-6 -mt-10 relative z-20">
         <div class="max-w-4xl mx-auto">
             <!-- Success Message Overlay -->
-            <div id="success-overlay" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-guardian-black/95 backdrop-blur-md px-6">
-                <div class="bg-guardian-dark p-8 md:p-12 rounded-sm max-w-md w-full text-center shadow-2xl border-t-4 border-guardian-gold">
-                    <div class="w-16 h-16 md:w-20 md:h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+            <div id="success-overlay"
+                class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-guardian-black/95 backdrop-blur-md px-6">
+                <div
+                    class="bg-guardian-dark p-8 md:p-12 rounded-sm max-w-md w-full text-center shadow-2xl border-t-4 border-guardian-gold">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
                         <i data-lucide="check" class="w-8 h-8 md:w-10 md:h-10 text-guardian-black"></i>
                     </div>
-                    <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4 uppercase tracking-tighter">Application Received</h3>
-                    <p class="text-gray-400 text-sm md:text-base mb-8 leading-relaxed">Your professional profile has been securely transmitted to our talent acquisition team. We will review your credentials and reach out shortly.</p>
-                    <a href="index.html" class="inline-block px-10 py-4 gold-gradient text-guardian-black font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all text-xs md:text-sm">
+                    <h3
+                        class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4 uppercase tracking-tighter">
+                        Application Received</h3>
+                    <p class="text-gray-400 text-sm md:text-base mb-8 leading-relaxed">Your professional profile has
+                        been securely transmitted to our talent acquisition team. We will review your credentials and
+                        reach out shortly.</p>
+                    <a href="index.html"
+                        class="inline-block px-10 py-4 gold-gradient text-guardian-black font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all text-xs md:text-sm">
                         Return to Home
                     </a>
                 </div>
             </div>
 
             <!-- Hidden Iframe for Silent Submission -->
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccess(); }"></iframe>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                onload="if(submitted) { showSuccess(); }"></iframe>
 
-            <div class="bg-guardian-dark p-6 md:p-12 rounded-sm shadow-2xl reveal active border-t-4 border-guardian-gold">
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSeDShbFr19dBwcZRHMI4RYSwadNANCVZamEaITgCmDjE60z-g/formResponse" 
-                      method="POST" 
-                      target="hidden_iframe" 
-                      onsubmit="submitted=true;"
-                      class="space-y-10 md:space-y-12">
-                    
+            <div
+                class="bg-guardian-dark p-6 md:p-12 rounded-sm shadow-2xl reveal active border-t-4 border-guardian-gold">
+                <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSeDShbFr19dBwcZRHMI4RYSwadNANCVZamEaITgCmDjE60z-g/formResponse"
+                    method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="space-y-10 md:space-y-12">
+
                     <!-- Google Forms System Fields -->
                     <input type="hidden" name="fvv" value="1">
                     <input type="hidden" name="pageHistory" value="0">
                     <input type="hidden" name="fbzx" value="5882835550595011350">
-                    
+
                     <!-- Section: Personal Information -->
                     <div class="reveal">
-                        <h2 class="font-heading text-lg md:text-xl font-bold text-white mb-8 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">Personal Information</h2>
+                        <h2
+                            class="font-heading text-lg md:text-xl font-bold text-white mb-8 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">
+                            Personal Information</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                             <div>
                                 <label class="label-text">Full Legal Name</label>
-                                <input type="text" name="entry.927649612" class="form-input" placeholder="Enter your full name" required>
+                                <input type="text" name="entry.927649612" class="form-input"
+                                    placeholder="Enter your full name" required>
                             </div>
                             <div>
                                 <label class="label-text">Email Address</label>
-                                <input type="email" name="entry.1478762537" class="form-input" placeholder="example@email.com" required>
+                                <input type="email" name="entry.1478762537" class="form-input"
+                                    placeholder="example@email.com" required>
                             </div>
                             <div>
                                 <label class="label-text">Phone Number</label>
-                                <input type="tel" name="entry.1125708567" class="form-input" placeholder="+1234567890" required>
+                                <input type="tel" name="entry.1125708567" class="form-input" placeholder="+1234567890"
+                                    required>
                             </div>
                             <div>
                                 <label class="label-text">Date of Birth</label>
@@ -264,92 +294,64 @@
                         </div>
                         <div class="mt-8 md:mt-10">
                             <label class="label-text">Residential Address</label>
-                            <textarea name="entry.1731899182" rows="2" class="form-input resize-none" placeholder="Street, City, Country" required></textarea>
+                            <textarea name="entry.1731899182" rows="2" class="form-input resize-none"
+                                placeholder="Street, City, Country" required></textarea>
                         </div>
                     </div>
 
                     <!-- Section: Professional Background -->
                     <div class="reveal" style="transition-delay: 100ms;">
-                        <h2 class="font-heading text-lg md:text-xl font-bold text-white mb-8 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">Professional Background</h2>
+                        <h2
+                            class="font-heading text-lg md:text-xl font-bold text-white mb-8 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">
+                            Professional Background</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                            <div>
-                                <label class="label-text">Right to Work Status</label>
-                                <select name="entry.1644501535" class="form-input" required>
-                                    <option value="" disabled selected>Select status</option>
-                                    <option value="Citizen">Citizen</option>
-                                    <option value="Work Permit">Work Permit</option>
-                                    <option value="Visa Required">Visa Required</option>
-                                </select>
-                            </div>
+
                             <div>
                                 <label class="label-text">Educational Background</label>
-                                <input type="text" name="entry.468853742" class="form-input" placeholder="e.g. Bachelor's in CS" required>
+                                <input type="text" name="entry.468853742" class="form-input"
+                                    placeholder="e.g. Bachelor's in CS" required>
                             </div>
                             <div>
                                 <label class="label-text">Total Years of Experience</label>
-                                <input type="number" name="entry.1494659390" class="form-input" placeholder="0" required>
+                                <input type="number" name="entry.1494659390" class="form-input" placeholder="0"
+                                    required>
                             </div>
                             <div>
                                 <label class="label-text">Inbound/Outbound Exp.</label>
-                                <input type="text" name="entry.1260024624" class="form-input" placeholder="e.g. 2 years Inbound" required>
+                                <input type="text" name="entry.1260024624" class="form-input"
+                                    placeholder="e.g. 2 years Inbound" required>
                             </div>
                             <div>
                                 <label class="label-text">CRM Proficiency</label>
-                                <input type="text" name="entry.726838118" class="form-input" placeholder="e.g. Salesforce, Zendesk" required>
+                                <input type="text" name="entry.726838118" class="form-input"
+                                    placeholder="e.g. Salesforce, Zendesk" required>
                             </div>
-                            <div>
-                                <label class="label-text">Typing Speed (WPM)</label>
-                                <input type="number" name="entry.1854652084" class="form-input" placeholder="45" required>
-                            </div>
+
                         </div>
                         <div class="mt-8 md:mt-10">
                             <label class="label-text">Relevant Experience</label>
-                            <textarea name="entry.1058477876" rows="3" class="form-input resize-none" placeholder="Summarize your relevant professional history" required></textarea>
+                            <textarea name="entry.1058477876" rows="3" class="form-input resize-none"
+                                placeholder="Summarize your relevant professional history" required></textarea>
                         </div>
                     </div>
 
                     <!-- Section: Employment Preferences -->
                     <div class="reveal" style="transition-delay: 200ms;">
-                        <h2 class="font-heading text-lg md:text-xl font-bold text-white mb-8 border-l-4 border-guardian-gold pl-4 uppercase tracking-widest">Preferences & Availability</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                            <div>
-                                <label class="label-text">FT or PT Employment?</label>
-                                <select name="entry.1055188641" class="form-input" required>
-                                    <option value="" disabled selected>Select preference</option>
-                                    <option value="Full-Time">Full-Time</option>
-                                    <option value="Part-Time">Part-Time</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="label-text">Preferred Shift Type</label>
-                                <select name="entry.842308220" class="form-input" required>
-                                    <option value="" disabled selected>Select shift</option>
-                                    <option value="Day">Day</option>
-                                    <option value="Night">Night</option>
-                                    <option value="Rotational">Rotational</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="label-text">Salary Expectation</label>
-                                <input type="text" name="entry.482409614" class="form-input" placeholder="e.g. $50,000/year" required>
-                            </div>
-                            <div>
-                                <label class="label-text">Availability / Start Date</label>
-                                <input type="date" name="entry.992676733" class="form-input" required>
-                            </div>
-                        </div>
                         <div class="mt-8 md:mt-10">
                             <label class="label-text">How did you hear about us?</label>
-                            <input type="text" name="entry.899167736" class="form-input" placeholder="e.g. LinkedIn, Referral" required>
+                            <input type="text" name="entry.899167736" class="form-input"
+                                placeholder="e.g. LinkedIn, Referral" required>
                         </div>
                         <div class="mt-8 md:mt-10">
                             <label class="label-text">Additional Info</label>
-                            <textarea name="entry.1685048332" rows="3" class="form-input resize-none" placeholder="Tell us more about yourself..."></textarea>
+                            <textarea name="entry.1685048332" rows="3" class="form-input resize-none"
+                                placeholder="Tell us more about yourself..."></textarea>
                         </div>
                     </div>
 
                     <div class="pt-10 reveal">
-                        <button type="submit" class="w-full gold-gradient text-guardian-black font-bold uppercase tracking-widest py-5 rounded-sm hover:brightness-110 transition-all shadow-xl hover:shadow-gold-500/20 hover:-translate-y-1 transform duration-200 text-sm">
+                        <button type="submit"
+                            class="w-full gold-gradient text-guardian-black font-bold uppercase tracking-widest py-5 rounded-sm hover:brightness-110 transition-all shadow-xl hover:shadow-gold-500/20 hover:-translate-y-1 transform duration-200 text-sm">
                             Submit Application
                         </button>
                         <p class="text-center text-gray-500 text-[10px] mt-8 uppercase tracking-[0.3em]">
@@ -363,60 +365,72 @@
 
     <footer class="bg-white pt-24 pb-12">
         <div class="container mx-auto px-6 max-w-7xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
-                <!-- Column 1: Brand & Contact -->
-                <div class="space-y-10">
-                    <div class="flex items-center gap-4">
-                        <img src="assets/logo.png" alt="Guardian BPO Logo" class="w-12 h-12 object-contain">
-                        <span class="font-heading font-extrabold text-2xl tracking-tighter uppercase text-guardian-black">Guardian<span class="gold-text-gradient font-extrabold italic">BPO</span></span>
-                    </div>
-                    <p class="text-guardian-gray text-lg max-w-md leading-relaxed">
-                        We architect and manage world-class outsourcing solutions, transforming your operational bottlenecks into streamlined, scalable advantages.
-                    </p>
-                    <div class="space-y-4">
-                        <p class="flex items-center gap-4 text-guardian-black font-bold">
-                            <i data-lucide="phone" class="w-5 h-5 text-guardian-black"></i> +1 (509) 716-0425
-                        </p>
-                        <p class="flex items-center gap-4 text-guardian-black font-bold">
-                            <i data-lucide="mail" class="w-5 h-5 text-guardian-black"></i> support@guardianbpo.com
-                        </p>
-                    </div>
+            <!-- Top Section: Logo & Socials -->
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-10 mb-16 pb-16 border-b border-gray-100">
+                <div class="flex items-center gap-5">
+                    <img src="assets/logo.png" alt="Guardian BPO Logo" class="w-16 h-16 md:w-20 md:h-20 object-contain">
+                    <span
+                        class="font-heading font-extrabold text-3xl md:text-5xl tracking-tighter uppercase text-guardian-black">Guardian<span
+                            class="gold-text-gradient font-extrabold italic">BPO</span></span>
                 </div>
 
-                <!-- Column 2: Navigation & Socials -->
-                <div class="grid grid-cols-2 gap-8">
-                    <div>
-                        <h5 class="font-bold text-guardian-black uppercase tracking-wider text-xs mb-8">Navigation</h5>
-                        <ul class="space-y-4 text-guardian-gray text-sm">
-                            <li><a href="index.html" class="hover:text-guardian-black transition-colors">Home</a></li>
-                            <li><a href="index.html#about" class="hover:text-guardian-black transition-colors">About Us</a></li>
-                            <li><a href="jobs.html" class="hover:text-guardian-black transition-colors font-bold text-guardian-black">Careers</a></li>
-                            <li><a href="index.html#contact" class="hover:text-guardian-black transition-colors">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="space-y-10">
-                        <div>
-                            <h5 class="font-bold text-guardian-black uppercase tracking-wider text-xs mb-8">Social Connect</h5>
-                            <div class="flex gap-4">
-                                <a href="#" class="w-10 h-10 bg-guardian-black text-white flex items-center justify-center rounded-sm hover:bg-guardian-gray transition-colors shadow-lg">
-                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-guardian-black text-white flex items-center justify-center rounded-sm hover:bg-guardian-gray transition-colors shadow-lg">
-                                    <i data-lucide="facebook" class="w-5 h-5"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-guardian-black text-white flex items-center justify-center rounded-sm hover:bg-guardian-gray transition-colors shadow-lg">
-                                    <i data-lucide="twitter" class="w-5 h-5"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-guardian-black text-white flex items-center justify-center rounded-sm hover:bg-guardian-gray transition-colors shadow-lg">
-                                    <i data-lucide="instagram" class="w-5 h-5"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="flex flex-col items-center md:items-end gap-6">
+                    <p class="text-guardian-black uppercase tracking-[0.3em] text-[10px] font-bold">Social Connect</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-12 h-12 bg-[#0a0a0a] flex items-center justify-center rounded-sm hover:bg-guardian-gold transition-all duration-300 shadow-lg group">
+                            <i data-lucide="linkedin"
+                                class="w-6 h-6 text-guardian-gold group-hover:text-black transition-colors"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-[#0a0a0a] flex items-center justify-center rounded-sm hover:bg-guardian-gold transition-all duration-300 shadow-lg group">
+                            <i data-lucide="facebook"
+                                class="w-6 h-6 text-guardian-gold group-hover:text-black transition-colors"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-[#0a0a0a] flex items-center justify-center rounded-sm hover:bg-guardian-gold transition-all duration-300 shadow-lg group">
+                            <i data-lucide="twitter"
+                                class="w-6 h-6 text-guardian-gold group-hover:text-black transition-colors"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-[#0a0a0a] flex items-center justify-center rounded-sm hover:bg-guardian-gold transition-all duration-300 shadow-lg group">
+                            <i data-lucide="instagram"
+                                class="w-6 h-6 text-guardian-gold group-hover:text-black transition-colors"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 text-guardian-gray text-[10px] uppercase tracking-[0.2em] font-bold">
+            <!-- Middle Section: Horizontal Navigation -->
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-16">
+                <a href="index.html"
+                    class="text-guardian-black hover:text-guardian-gold transition-colors font-bold uppercase tracking-widest text-sm">Home</a>
+                <a href="index.html#about"
+                    class="text-guardian-black hover:text-guardian-gold transition-colors font-bold uppercase tracking-widest text-sm">About
+                    Us</a>
+                <a href="jobs.html"
+                    class="gold-text-gradient font-extrabold uppercase tracking-widest text-sm">Careers</a>
+                <a href="index.html#contact"
+                    class="text-guardian-black hover:text-guardian-gold transition-colors font-bold uppercase tracking-widest text-sm">Contact</a>
+            </div>
+
+            <!-- Contact Row -->
+            <div
+                class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 mb-16 text-guardian-black">
+                <p class="flex items-center gap-3 font-bold text-sm">
+                    <i data-lucide="phone" class="w-5 h-5"></i> +1 (509) 716-0425
+                </p>
+                <p class="flex items-center gap-3 font-bold text-sm">
+                    <i data-lucide="mail" class="w-5 h-5"></i> info@guardianbpo.com
+                </p>
+                <p class="flex items-center gap-3 font-bold text-sm">
+                    <i data-lucide="mail" class="w-5 h-5 text-guardian-gold"></i> career@guardianbpo.com
+                </p>
+            </div>
+
+            <div
+                class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 text-guardian-gray text-[10px] uppercase tracking-[0.2em] font-bold">
                 <span>© 2026 Guardian BPO. All rights reserved. Professional Outsourcing Excellence.</span>
                 <div class="flex gap-8">
                     <a href="#" class="hover:text-guardian-black transition-colors">Privacy Policy</a>
@@ -436,15 +450,15 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Glassy Header Animation on Scroll
+        // Header Animation on Scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('py-1', 'bg-guardian-black/90');
-                navbar.classList.remove('bg-guardian-black/70');
+                navbar.classList.add('py-1', 'bg-[#0a0a0a]', 'shadow-xl');
+                navbar.classList.remove('py-4');
             } else {
-                navbar.classList.remove('py-1', 'bg-guardian-black/90');
-                navbar.classList.add('bg-guardian-black/70');
+                navbar.classList.remove('py-1', 'shadow-xl');
+                navbar.classList.add('py-4');
             }
         });
 
@@ -453,7 +467,7 @@
             const menu = document.getElementById('mobile-menu');
             const overlay = document.getElementById('mobile-overlay');
             const isClosed = menu.classList.contains('translate-x-full');
-            
+
             if (isClosed) {
                 menu.classList.remove('translate-x-full');
                 overlay.classList.remove('hidden');
@@ -483,10 +497,10 @@
         reveal();
 
         // Dynamic Job Title Extraction
-        window.onload = function() {
+        window.onload = function () {
             const urlParams = new URLSearchParams(window.location.search);
             const jobTitle = urlParams.get('job');
-            
+
             if (jobTitle) {
                 const jobDisplay = document.getElementById('job-selection');
                 const titleElement = document.getElementById('selected-job-title');
